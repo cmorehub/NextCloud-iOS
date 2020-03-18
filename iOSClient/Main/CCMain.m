@@ -811,7 +811,7 @@
 
 - (void)openAssetsPickerController
 {
-    NCPhotosPickerViewController *viewController = [[NCPhotosPickerViewController alloc] init:self maxSelectedAssets:100];
+    NCPhotosPickerViewController *viewController = [[NCPhotosPickerViewController alloc] init:self maxSelectedAssets:100 singleSelectedMode:false];
     
     [viewController openPhotosPickerViewControllerWithPhAssets:^(NSArray<PHAsset *> * _Nonnull assets) {
         if (assets.count > 0) {
@@ -870,10 +870,9 @@
 
 - (void)saveSelectedFilesSelector:(NSString *)path didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
-    if (error)
+    if (error) {
         [[NCContentPresenter shared] messageNotification:@"_save_selected_files_" description:@"_file_not_saved_cameraroll_" delay:k_dismissAfterSecond type:messageTypeError errorCode:error.code];
-    else
-        [[NCContentPresenter shared] messageNotification:@"_save_selected_files_" description:@"_file_saved_cameraroll_" delay:k_dismissAfterSecond type:messageTypeError errorCode:error.code];
+    }
 }
 
 - (void)saveSelectedFiles

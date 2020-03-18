@@ -321,7 +321,7 @@ extension CCMain {
             if (!metadata.e2eEncrypted && CCUtility.isEnd(toEndEnabled: appDelegate.activeAccount)) {
                 actions.append(
                     NCMenuAction(
-                        title: NSLocalizedString("_remove_available_offline_", comment: ""),
+                        title: NSLocalizedString("_e2e_set_folder_encrypted_", comment: ""),
                         icon: CCGraphics.changeThemingColorImage(UIImage(named: "lock"), width: 50, height: 50, color: NCBrandColor.sharedInstance.icon),
                         action: { menuAction in
                             DispatchQueue.global(qos: .userInitiated).async {
@@ -411,36 +411,38 @@ extension CCMain {
                 )
             }
 
-            actions.append(
-                NCMenuAction(
-                    title: NSLocalizedString("_rename_", comment: ""),
-                    icon: CCGraphics.changeThemingColorImage(UIImage(named: "rename"), width: 50, height: 50, color: NCBrandColor.sharedInstance.icon),
-                    action: { menuAction in
-                        let alertController = UIAlertController(title: NSLocalizedString("_rename_", comment: ""), message: nil, preferredStyle: .alert)
+            if(metadata.typeFile != k_metadataTypeFile_imagemeter) {
+                actions.append(
+                    NCMenuAction(
+                        title: NSLocalizedString("_rename_", comment: ""),
+                        icon: CCGraphics.changeThemingColorImage(UIImage(named: "rename"), width: 50, height: 50, color: NCBrandColor.sharedInstance.icon),
+                        action: { menuAction in
+                            let alertController = UIAlertController(title: NSLocalizedString("_rename_", comment: ""), message: nil, preferredStyle: .alert)
 
-                        alertController.addTextField { (textField) in
-                            textField.text = metadata.fileNameView
-                            textField.delegate = self as? UITextFieldDelegate
-                            textField.addTarget(self, action: #selector(self.minCharTextFieldDidChange(_:)
-                                ), for: UIControl.Event.editingChanged)
+                            alertController.addTextField { (textField) in
+                                textField.text = metadata.fileNameView
+                                textField.delegate = self as? UITextFieldDelegate
+                                textField.addTarget(self, action: #selector(self.minCharTextFieldDidChange(_:)
+                                    ), for: UIControl.Event.editingChanged)
+                            }
+
+                            let cancelAction = UIAlertAction(title: NSLocalizedString("_cancel_", comment: ""), style: .cancel, handler: nil)
+
+                            let okAction = UIAlertAction(title: NSLocalizedString("_ok_", comment: ""), style: .default, handler: { action in
+                                    let fileName = alertController.textFields![0].text
+                                    self.perform(#selector(self.renameFile(_:)), on: .main, with: [metadata, fileName!], waitUntilDone: false)
+
+                                })
+                            okAction.isEnabled = false
+                            alertController.addAction(cancelAction)
+                            alertController.addAction(okAction)
+
+                            self.present(alertController, animated: true, completion: nil)
                         }
-
-                        let cancelAction = UIAlertAction(title: NSLocalizedString("_cancel_", comment: ""), style: .cancel, handler: nil)
-
-                        let okAction = UIAlertAction(title: NSLocalizedString("_ok_", comment: ""), style: .default, handler: { action in
-                                let fileName = alertController.textFields![0].text
-                                self.perform(#selector(self.renameFile(_:)), on: .main, with: [metadata, fileName!], waitUntilDone: false)
-
-                            })
-                        okAction.isEnabled = false
-                        alertController.addAction(cancelAction)
-                        alertController.addAction(okAction)
-
-                        self.present(alertController, animated: true, completion: nil)
-                    }
+                    )
                 )
-            )
-
+            }
+            
             if (!metadataFolder.e2eEncrypted) {
                 actions.append(
                     NCMenuAction(
