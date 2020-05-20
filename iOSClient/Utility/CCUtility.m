@@ -1116,11 +1116,14 @@
 
 + (NSString *)getDirectoryProviderStorageOcId:(NSString *)ocId
 {
-    NSString *path = [NSString stringWithFormat:@"%@/%@", [self getDirectoryProviderStorage], ocId];
-    
-    if (![[NSFileManager defaultManager] fileExistsAtPath:path])
+    NSString *path = [NSString stringWithFormat:@"%@/%@", [self getDirectoryProviderStorage], ocId];//only key
+    NSLog(@"=====CCUtility.m getDirectoryProviderStorageOcId onlyKey=====");
+    NSLog(path);
+    if (![[NSFileManager defaultManager] fileExistsAtPath:path]){
         [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
-
+        NSLog(@"=====CCUtility.m getDirectoryProviderStorageOcId outside=====");//if you have download this
+        NSLog(path);
+    }
     return path;
 }
 

@@ -97,6 +97,7 @@
         if ([NCBrandOptions sharedInstance].disable_multiaccount == NO) {
             
             // New Account nextcloud
+            
             row = [XLFormRowDescriptor formRowDescriptorWithTag:@"addAccount" rowType:XLFormRowDescriptorTypeButton title:NSLocalizedString(@"_add_account_", nil)];
             row.cellConfigAtConfigure[@"backgroundColor"] = NCBrandColor.sharedInstance.backgroundView;
             [row.cellConfig setObject:[UIFont systemFontOfSize:15.0] forKey:@"textLabel.font"];
@@ -105,9 +106,11 @@
             [row.cellConfig setObject:NCBrandColor.sharedInstance.textView forKey:@"textLabel.textColor"];
             row.action.formSelector = @selector(addAccount:);
             [section addFormRow:row];
+             
         }
         
         // delete Account
+        
         row = [XLFormRowDescriptor formRowDescriptorWithTag:@"delAccount" rowType:XLFormRowDescriptorTypeButton title:NSLocalizedString(@"_delete_account_", nil)];
         row.cellConfigAtConfigure[@"backgroundColor"] = NCBrandColor.sharedInstance.backgroundView;
         [row.cellConfig setObject:[UIColor redColor] forKey:@"textLabel.textColor"];
@@ -117,6 +120,7 @@
         row.action.formSelector = @selector(deleteAccount:);
         if (listAccount.count == 0) row.disabled = @YES;
         [section addFormRow:row];
+         
     }
     
     // Section : USER INFORMATION -------------------------------------------

@@ -33,6 +33,10 @@
 #import "NCAutoUpload.h"
 #import "NCPushNotificationEncryption.h"
 
+@import AppCenter;
+@import AppCenterAnalytics;
+@import AppCenterCrashes;
+
 @class NCViewerRichdocument;
 
 
@@ -45,6 +49,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //AppCenter
+    [MSAppCenter start:@"29467ec0-d9e7-4ca0-a5d2-817be2767fba" withServices:@[
+      [MSAnalytics class],
+      [MSCrashes class]
+    ]];
+    
     // Fabric
     if (![CCUtility getDisableCrashservice] && NCBrandOptions.sharedInstance.disable_crash_service == false) {
         [Fabric with:@[[Crashlytics class]]];
@@ -475,7 +485,8 @@
     for (tableAccount *result in [[NCManageDatabase sharedInstance] getAllAccount]) {
         
         NSString *token = [CCUtility getPushNotificationToken:result.account];
-        
+        NSLog(@"=====AppDelegate.m pushNotification=====");
+        NSLog(token);
         if (![token isEqualToString:self.pushKitToken]) {
             if (token != nil) {
                 // unsubscribing + subscribing

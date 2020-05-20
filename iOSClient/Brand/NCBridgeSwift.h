@@ -30,7 +30,7 @@
 //
 #if !defined(EXTENSION)
 
-    #import "Nextcloud-Swift.h"
+    #import "QBee-Swift.h"
 
 #endif
 

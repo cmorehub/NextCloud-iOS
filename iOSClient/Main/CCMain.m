@@ -2066,11 +2066,14 @@
     }
     
     // Add + new account
+    
     CCMenuItem *item = [[CCMenuItem alloc] init];
     
     item.title = NSLocalizedString(@"_add_account_", nil);
+    item.title = NSLocalizedString(@"",nil);
     item.argument = @"";
     item.image = [CCGraphics changeThemingColorImage:[UIImage imageNamed:@"add"] width:50 height:50 color:NCBrandColor.sharedInstance.textView];
+    
     item.target = self;
     item.action = @selector(addNewAccount:);
     
@@ -2108,7 +2111,7 @@
     rect.size.height = rect.size.height - locationY - safeAreaTop - offsetY;
     
     [CCMenuAccount setTitleFont:[UIFont systemFontOfSize:12.0]];
-    [CCMenuAccount showMenuInView:self.navigationController.view fromRect:rect menuItems:menuArray withOptions:options];    
+    [CCMenuAccount showMenuInView:self.navigationController.view fromRect:rect menuItems:menuArray withOptions:options];
 }
 
 - (void)changeDefaultAccount:(CCMenuItem *)sender

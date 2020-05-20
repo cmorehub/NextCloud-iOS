@@ -999,7 +999,8 @@
             
             NSString *url = parser.url;
             NSString *token = parser.token;
-            
+            NSLog(@"=====OCCommunication shareFileOrFolderByServer =====");
+            NSLog(responseData);
             if (url != nil) {
                 
                 successRequest(response, url, request.redirectedServer);

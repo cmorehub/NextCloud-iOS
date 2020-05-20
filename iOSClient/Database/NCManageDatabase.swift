@@ -1583,7 +1583,8 @@ class NCManageDatabase: NSObject {
         guard let result = realm.objects(tableE2eEncryptionLock.self).filter("account == %@ AND serverUrl == %@", tableAccount.account, serverUrl).first else {
             return nil
         }
-        
+        print("wwwwwwwwwwwwwwww")
+        print(tableE2eEncryptionLock.init(value: result))
         return tableE2eEncryptionLock.init(value: result)
     }
     
@@ -1603,7 +1604,7 @@ class NCManageDatabase: NSObject {
         addObject.ocId = ocId
         addObject.serverUrl = serverUrl
         addObject.token = token
-                
+        
         realm.add(addObject, update: .all)
         
         do {
@@ -1611,6 +1612,7 @@ class NCManageDatabase: NSObject {
         } catch let error {
             print("[LOG] Could not write to database: ", error)
         }
+        
     }
     
     @objc func deteleE2ETokenLock(serverUrl: String) {
@@ -2598,7 +2600,8 @@ class NCManageDatabase: NSObject {
         
         let realm = try! Realm()
         realm.beginWrite()
-
+        print("=====items=====")
+        print(items)
         for sharedDto in items {
             
             let addObject = tableShare()
@@ -2641,7 +2644,8 @@ class NCManageDatabase: NSObject {
             
             addObject.fileName = fileName
             addObject.serverUrl = serverUrl
-            
+            print("=====NCMangeDatabase.swift addShare addObject tocken=====")
+            print(sharedDto.token)
             realm.add(addObject, update: .all)
         }
         
@@ -2673,11 +2677,15 @@ class NCManageDatabase: NSObject {
         let sortProperties = [SortDescriptor(keyPath: "shareType", ascending: false), SortDescriptor(keyPath: "idRemoteShared", ascending: false)]
         
         let firstShareLink = realm.objects(tableShare.self).filter("account == %@ AND serverUrl == %@ AND fileName == %@ AND shareType == %d", metadata.account, metadata.serverUrl, metadata.fileName, Int(shareTypeLink.rawValue)).first
+        print("=====NCManageDatabase.swift getTableShares firstShareLink")
+        print(firstShareLink)
         if firstShareLink == nil {
             let results = realm.objects(tableShare.self).filter("account == %@ AND serverUrl == %@ AND fileName == %@", metadata.account, metadata.serverUrl, metadata.fileName).sorted(by: sortProperties)
             return(firstShareLink: firstShareLink, share: Array(results.map { tableShare.init(value:$0) }))
         } else {
             let results = realm.objects(tableShare.self).filter("account == %@ AND serverUrl == %@ AND fileName == %@ AND idRemoteShared != %d", metadata.account, metadata.serverUrl, metadata.fileName, firstShareLink!.idRemoteShared).sorted(by: sortProperties)
+            print("=====NCManageDatabase.swift getTableShares firstShareLink not nil")
+            print(firstShareLink)
             return(firstShareLink: firstShareLink, share: Array(results.map { tableShare.init(value:$0) }))
         }
     }

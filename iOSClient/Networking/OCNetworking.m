@@ -304,7 +304,6 @@
             NCXMLGetAppPasswordParser *parser = [NCXMLGetAppPasswordParser new];
             [parser initParserWithData:data];
             token = parser.token;
-            
         } else {
             
             errorCode = httpResponse.statusCode;

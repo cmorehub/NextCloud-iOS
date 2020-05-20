@@ -60,6 +60,7 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
         
         shareLinkLabel.text = NSLocalizedString("_share_link_", comment: "")
         shareLinkImage.image = NCShareCommon.sharedInstance.createLinkAvatar()
+        print("Bang")
         buttonCopy.setImage(CCGraphics.changeThemingColorImage(UIImage.init(named: "shareCopy"), width: 100, height: 100, color: UIColor.gray), for: .normal)
 
         tableView.dataSource = self
@@ -112,6 +113,10 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
         
     @objc func reloadData() {
         let shares = NCManageDatabase.sharedInstance.getTableShares(metadata: metadata!)
+        print("=====NCShare.swift reloadData metadata=====")
+        print(metadata!)
+        print("=====NCShare.swift reloadData shares=====")
+        print(shares)
         if shares.firstShareLink == nil {
             buttonMenu.setImage(CCGraphics.changeThemingColorImage(UIImage.init(named: "shareAdd"), width: 100, height: 100, color: UIColor.gray), for: .normal)
             buttonCopy.isHidden = true
@@ -137,6 +142,10 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
 
         let shares = NCManageDatabase.sharedInstance.getTableShares(metadata: metadata)
         tapCopy(with: shares.firstShareLink, sender: sender)
+        print("=====NCShare.swift touchUpInsideButtonCopy metadata=====")
+        print(metadata)
+        print("=====NCShare.swift touchUpInsideButtonCopy shares.firstShareLink=====")
+        print(shares.firstShareLink)
     }
     
     @IBAction func touchUpInsideButtonMenu(_ sender: Any) {
@@ -282,6 +291,7 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
             let item = items[index]
 
             let fileNameLocalPath = CCUtility.getDirectoryUserData() + "/" + CCUtility.getStringUser(self.appDelegate.activeUser, activeUrl: self.appDelegate.activeUrl) + "-" + item.name + ".png"
+            print("abc"+fileNameLocalPath)
             if FileManager.default.fileExists(atPath: fileNameLocalPath) {
                 if let image = UIImage(contentsOfFile: fileNameLocalPath) { cell.imageItem.image = image }
             } else {

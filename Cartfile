@@ -22,3 +22,6 @@ github "ivanbruel/MarkdownKit"
 
 github "https://github.com/marinofaggiana/FastScroll" "master"
 github "https://github.com/marinofaggiana/AFNetworking" "master"
+
+github "microsoft/appcenter-sdk-apple"
+

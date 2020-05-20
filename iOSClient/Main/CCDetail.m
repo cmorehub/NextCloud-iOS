@@ -93,7 +93,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
     self.tabBarController.tabBar.hidden = YES;
 }
 
@@ -187,7 +186,8 @@
     
     // AUDIO VIDEO
     if ([self.metadataDetail.typeFile isEqualToString: k_metadataTypeFile_video] || [self.metadataDetail.typeFile isEqualToString: k_metadataTypeFile_audio]) {
-        
+        NSLog(@"The video is start");
+        NSLog(self.metadataDetail.typeFile);
         self.edgesForExtendedLayout = UIRectEdgeAll;
         [self createToolbar];
         [[NCViewerMedia sharedInstance] viewMedia:self.metadataDetail detail:self];
