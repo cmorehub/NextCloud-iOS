@@ -68,13 +68,18 @@
     // Verify upgrade
     if ([self upgrade]) {
         // Set account, if no exists clear all
+        NSLog(@"AppDelegate self upgrade");
         tableAccount *tableAccount = [[NCManageDatabase sharedInstance] getAccountActive];
         if (tableAccount == nil) {
+
+            NSLog(@"AppDelegate tableAccount == nil");
             // remove all the keys Chain
             [CCUtility deleteAllChainStore];
             // remove all the App group key
             [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]];
         } else {
+            
+            NSLog(@"AppDelegate tableAccount != nil");
             [self settingActiveAccount:tableAccount.account activeUrl:tableAccount.url activeUser:tableAccount.user activeUserID:tableAccount.userID activePassword:[CCUtility getPassword:tableAccount.account]];
         }
     }
@@ -176,8 +181,10 @@
         }
     } else {
         if ([CCUtility getIntro] == NO) {
-            UIViewController *introViewController = [[UIStoryboard storyboardWithName:@"NCIntro" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+//            UIViewController *introViewController = [[UIStoryboard storyboardWithName:@"NCIntro" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
             
+            UIViewController *introViewController = [[UIStoryboard storyboardWithName:@"QBeeMain" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+             
             UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: introViewController];
             self.window.rootViewController = navController;
             [self.window makeKeyAndVisible];
@@ -326,7 +333,7 @@
 {
         // use appConfig [MDM]
         if ([NCBrandOptions sharedInstance].use_configuration) {
-            
+            NSLog(@"=====ad=====");
             if (!(_appConfigView.isViewLoaded && _appConfigView.view.window)) {
             
                 self.appConfigView = [[UIStoryboard storyboardWithName:@"CCLogin" bundle:nil] instantiateViewControllerWithIdentifier:@"NCAppConfigView"];
@@ -339,7 +346,7 @@
         
         // only for personalized LoginWeb [customer]
         if ([NCBrandOptions sharedInstance].use_login_web_personalized) {
-            
+            NSLog(@"=====ad2=====");
             if (!(_activeLoginWeb.isViewLoaded && _activeLoginWeb.view.window)) {
                 
                 self.activeLoginWeb = [[UIStoryboard storyboardWithName:@"CCLogin" bundle:nil] instantiateViewControllerWithIdentifier:@"NCLoginWeb"];
@@ -368,7 +375,7 @@
             }
             
         } else if ([NCBrandOptions sharedInstance].disable_intro && [NCBrandOptions sharedInstance].disable_request_login_url) {
-            
+            NSLog(@"====ad3=====");
             self.activeLoginWeb = [[UIStoryboard storyboardWithName:@"CCLogin" bundle:nil] instantiateViewControllerWithIdentifier:@"NCLoginWeb"];
             self.activeLoginWeb.urlBase = [[NCBrandOptions sharedInstance] loginBaseUrl];
             
@@ -384,7 +391,7 @@
             }
             
         } else {
-            
+            NSLog(@"=====ad4=====");
             if (!(_activeLogin.isViewLoaded && _activeLogin.view.window)) {
                 
                 _activeLogin = [[UIStoryboard storyboardWithName:@"CCLogin" bundle:nil] instantiateViewControllerWithIdentifier:@"CCLoginNextcloud"];
@@ -432,6 +439,12 @@
     self.activeUser = activeUser;
     self.activeUserID = activeUserID;
     self.activePassword = activePassword;
+    
+    NSLog(@"AppDelegate %@",activeAccount);
+    NSLog(@"AppDelegate %@",activeUrl);
+    NSLog(@"AppDelegate %@",activeUser);
+    NSLog(@"AppDelegate %@",activeUserID);
+    NSLog(@"AppDelegate %@",activePassword);
     tableCapabilities *capabilities = [[NCManageDatabase sharedInstance] getCapabilitesWithAccount:activeAccount];
 
     // Setting Account to Networking
@@ -485,8 +498,6 @@
     for (tableAccount *result in [[NCManageDatabase sharedInstance] getAllAccount]) {
         
         NSString *token = [CCUtility getPushNotificationToken:result.account];
-        NSLog(@"=====AppDelegate.m pushNotification=====");
-        NSLog(token);
         if (![token isEqualToString:self.pushKitToken]) {
             if (token != nil) {
                 // unsubscribing + subscribing
@@ -1714,14 +1725,19 @@
             NSString *fileName;
             
             for (tableLocalFile *record in records) {
+                NSLog(@"AppDelegate record.account %@",record.account);
                 if (![account isEqualToString:record.account]) {
                     tableAccount *tableAccount = [[NCManageDatabase sharedInstance] getAccountWithPredicate:[NSPredicate predicateWithFormat:@"account == %@", record.account]];
                     if (tableAccount) {
                         directoryUser = [CCUtility getDirectoryActiveUser:tableAccount.user activeUrl:tableAccount.url];
                         account = record.account;
                     }
+                    NSLog(@"AppDelegate rdirectoryUser %@",directoryUser);
+                    NSLog(@"AppDelegate account %@",account);
                 }
+                NSLog(@"AppDelegate record.ocId %@",record.ocId);
                 fileName = [NSString stringWithFormat:@"%@/%@", directoryUser, record.ocId];
+                NSLog(@"AppDelegate fileName %@",fileName);
                 if (![directoryUser isEqualToString:@""] && [[NSFileManager defaultManager] fileExistsAtPath:fileName]) {
                     [CCUtility moveFileAtPath:fileName toPath:[CCUtility getDirectoryProviderStorageOcId:record.ocId fileNameView:record.fileName]];
                 }

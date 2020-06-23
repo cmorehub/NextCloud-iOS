@@ -188,6 +188,7 @@
                 activeLoginWeb.urlBase = self.baseUrl.text;
                 
                 [self.navigationController pushViewController:activeLoginWeb animated:true];
+                
             }
             
             // NO Login Flow available
@@ -353,13 +354,17 @@
 
 - (IBAction)handleButtonLogin:(id)sender
 {
+    NSLog(@"=====button1");
     if ([self.baseUrl.text length] > 0 && _user.hidden && _password.hidden) {
         [self testUrl];
         return;
     }
     
+//    self.baseUrl.text = @"http://iottalk.cmoremap.com.tw:6325";
+//    self.user.text=@"bibby";
+//    self.password.text=@"97497929";
     if ([self.baseUrl.text length] > 0 && [self.user.text length] && [self.password.text length]) {
-        
+        NSLog(@"=====2");
         // remove last char if /
         if ([[self.baseUrl.text substringFromIndex:[self.baseUrl.text length] - 1] isEqualToString:@"/"])
             self.baseUrl.text = [self.baseUrl.text substringToIndex:[self.baseUrl.text length] - 1];
@@ -375,9 +380,9 @@
             
             [self.activity stopAnimating];
             self.login.enabled = YES;
-
+            
             if (errorCode == 0) {
-                
+                NSLog(@"=====3");
                 NSString *account = [NSString stringWithFormat:@"%@ %@", user, url];
                 
                 // NO account found, clear
@@ -396,10 +401,20 @@
                 
                 [[NSNotificationCenter defaultCenter] postNotificationOnMainThreadName:@"initializeMain" object:nil userInfo:nil];
                 
+                /*
+                let splitController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                splitController?.modalPresentationStyle = .fullScreen
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "initializeMain"), object: nil, userInfo: nil)
+                splitController!.view.alpha = 0
+                appDelegate.window.rootViewController = splitController!
+                appDelegate.window.makeKeyAndVisible()
+                UIView.animate(withDuration: 0.5) {
+                    splitController!.view.alpha = 1
+                }*/
                 [self dismissViewControllerAnimated:YES completion:nil];
                 
             } else {
-                
+                NSLog(@"=====4");
                 if (errorCode != NSURLErrorServerCertificateUntrusted) {
                     
                     NSString *messageAlert = [NSString stringWithFormat:@"%@.\n%@", NSLocalizedString(@"_not_possible_connect_to_server_", nil), message];
@@ -439,7 +454,7 @@
         _user.hidden = NO;
         _imagePassword.hidden = NO;
         _password.hidden = NO;
-        
+        NSLog(@"=====button2");
         [self.loginTypeView setTitle:NSLocalizedString(@"_web_login_", nil) forState:UIControlStateNormal];
         
     } else {

@@ -40,6 +40,9 @@ class NCIntroViewController: UIViewController, UICollectionViewDataSource, UICol
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        print("vvvvvvv")
         self.navigationController?.navigationBar.tintColor = NCBrandColor.sharedInstance.customerText
         self.navigationController?.navigationBar.barTintColor = NCBrandColor.sharedInstance.customer
         self.pageControl.currentPageIndicatorTintColor = NCBrandColor.sharedInstance.customerText

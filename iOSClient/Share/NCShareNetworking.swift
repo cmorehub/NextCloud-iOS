@@ -49,11 +49,6 @@ class NCShareNetworking: NSObject {
                 self.appDelegate.shares = NCManageDatabase.sharedInstance.addShare(account: self.metadata.account, activeUrl: self.activeUrl, items: itemsOCSharedDto)
                 self.appDelegate.activeMain?.tableView?.reloadData()
                 self.appDelegate.activeFavorites?.tableView?.reloadData()
-                print("=====NCShareNetworking.swift readShare() itemsOCSharedDto=====")
-                for a in itemsOCSharedDto{
-                    print(a.token)
-                }
-                print("========================================================")
             } else {
                 NCContentPresenter.shared.messageNotification("_share_", description: message, delay: TimeInterval(k_dismissAfterSecond), type: NCContentPresenter.messageType.error, errorCode: 0)
             }

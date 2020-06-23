@@ -57,6 +57,8 @@ class NCLoginWeb: UIViewController {
         // ADD k_flowEndpoint for Web Flow
         if urlBase != NCBrandOptions.sharedInstance.linkloginPreferredProviders {
             urlBase =  urlBase + k_flowEndpoint
+            print("zzzzzzzzz")
+            print(urlBase)
         }
         
         activityIndicator = UIActivityIndicatorView(style: .gray)
@@ -127,7 +129,8 @@ extension NCLoginWeb: WKNavigationDelegate {
             if server != "" && user != "" && password != "" {
                 
                 var serverUrl: String = server.replacingOccurrences(of: "/server:", with: "")
-                
+                print("=======")
+                print(serverUrl)
                 // Login Flow NC 12
                 if (NCBrandOptions.sharedInstance.use_login_web_personalized == false && serverUrl.hasPrefix("http://") == false && serverUrl.hasPrefix("https://") == false) {
                     serverUrl = urlBase

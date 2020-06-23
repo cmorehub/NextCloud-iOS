@@ -63,13 +63,9 @@
     
     if (!self.xmlChars) {
         self.xmlChars = [NSMutableString string];
-        NSLog(@"=====test xmlChars?=====");
-        NSLog(self.xmlChars);
     }
     
     [self.xmlChars setString:@""];
-    NSLog(@"=====test xmlChars??=====");
-    NSLog(self.xmlChars);
     
     if ([elementName isEqualToString:@"ocs"]) {
         self.xmlBucket = [NSMutableDictionary dictionary];
@@ -84,14 +80,6 @@
 
     if ([elementName isEqualToString:@"token"]) {
         self.token = [NSString stringWithString:self.xmlChars];//將xmlChars強制轉型為NSString
-        NSLog(@"=====OCXMLShareByLinkParser.m parser=====");
-        NSLog([NSString stringWithString:self.xmlChars]);
-        NSLog(self.token);
-        NSLog(@"===============================");
-        NSLog(@"===============================");
-        NSLog(@"===============================");
-        NSLog(@"===============================");
-        NSLog(@"===============================");
     }
     
     if ([elementName isEqualToString:@"message"]) {
@@ -105,8 +93,6 @@
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     [self.xmlChars appendString:string];
-    NSLog(@"=====test xmlChars???=====");
-    NSLog(self.xmlChars);
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser{

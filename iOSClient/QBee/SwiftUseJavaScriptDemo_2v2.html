@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no"/>
+    </head>
+    <body>
+<br/><br/><br/><br/><br/>
+	<font size=10>Sign Up</font>
+	<br/><br/>
+        <font size=5>Email Address</font>
+	<span id="name"></span>
+        <br/>
+        <input type="text" placeholder="Email Address" name="email"style=width:400px;height:30px;font-size:15px;>
+	<br/><br/><br/><br/><br/><br/><br/><br/>
+	<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+	<font size=5>I agree to QBee <a href=https://www.google.com/>Terms of Use</a href>, <a href=https://www.google.com/>Privacy Policy</a href> and <a href=https://www.google.com/>Fair Use Policy</a href>.</font>
+	<br/><br/><br/>
+        <input type=button style=width:200px;height:40px;font-size:15px;background-color:#3C3C3C;color:#ffffff; value="CREATE ACCOUNT" onclick="responseSwift()"></button>
+	<br/><br/><br/>
+	<font size=5>Already have an account? <a href=https://www.google.com/>Sign in now</a href></font>
+        <script type="text/javascript">
+
+            function responseSwift() {
+                var name=document.getElementsByName('email')[0].value;
+                window.webkit.messageHandlers.AppModel.postMessage(name);
+            }
+        </script>
+    </body>
+</html>

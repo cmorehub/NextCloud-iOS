@@ -31,9 +31,24 @@
 		3781B9B223DB2B9F006B4B1D /* CCMain+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781B9B123DB2B9F006B4B1D /* CCMain+Menu.swift */; };
 		3781B9B423DB2BC9006B4B1D /* CCFavorites+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781B9B323DB2BC9006B4B1D /* CCFavorites+Menu.swift */; };
 		37ECC83B23D0C7410082EFA2 /* NCMenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECC83A23D0C7400082EFA2 /* NCMenuAction.swift */; };
+		A0241F65249B6C6D0048BDA5 /* QBeeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0241F5F249B6C6B0048BDA5 /* QBeeAPI.swift */; };
+		A0241F66249B6C6D0048BDA5 /* QBeeSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0241F60249B6C6B0048BDA5 /* QBeeSignIn.swift */; };
+		A0241F67249B6C6D0048BDA5 /* QBeeSetUpQBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0241F61249B6C6C0048BDA5 /* QBeeSetUpQBee.swift */; };
+		A0241F68249B6C6D0048BDA5 /* QBeeSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0241F62249B6C6C0048BDA5 /* QBeeSignUp.swift */; };
+		A0241F69249B6C6D0048BDA5 /* QBeeMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0241F63249B6C6C0048BDA5 /* QBeeMain.swift */; };
+		A0241F6A249B6C6D0048BDA5 /* QBeeVerifyYourAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0241F64249B6C6D0048BDA5 /* QBeeVerifyYourAccount.swift */; };
+		A03AE74B2497AA5500E2E7F7 /* Ethernet1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03AE74A2497AA5500E2E7F7 /* Ethernet1.swift */; };
+		A03AE74D2497AAA800E2E7F7 /* Ethernet2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03AE74C2497AAA800E2E7F7 /* Ethernet2.swift */; };
+		A03AE74F2497AB0100E2E7F7 /* Ethernet3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03AE74E2497AB0100E2E7F7 /* Ethernet3.swift */; };
+		A03AE7512497AB0E00E2E7F7 /* Ethernet4.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03AE7502497AB0E00E2E7F7 /* Ethernet4.swift */; };
+		A03AE7532497AB1E00E2E7F7 /* Ethernet5.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03AE7522497AB1E00E2E7F7 /* Ethernet5.swift */; };
+		A03AE7552497AB3400E2E7F7 /* Ethernet6.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03AE7542497AB3400E2E7F7 /* Ethernet6.swift */; };
+		A03C4262248613BD00394B86 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03C4261248613BD00394B86 /* CloudKit.framework */; };
+		A05F4517249CF3700080BFCD /* SwiftUseJavaScriptDemo_2v2.html in Resources */ = {isa = PBXBuildFile; fileRef = A05F4516249CF36F0080BFCD /* SwiftUseJavaScriptDemo_2v2.html */; };
 		A0A89B14244C4EAC00061155 /* AppCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A89B13244C4EAC00061155 /* AppCenter.framework */; };
 		A0A89B18244C4EC500061155 /* AppCenterAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A89B17244C4EC400061155 /* AppCenterAnalytics.framework */; };
 		A0A89B1B244C4EDA00061155 /* AppCenterCrashes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A89B1A244C4EDA00061155 /* AppCenterCrashes.framework */; };
+		A0BD1BA22497388F001BDB4A /* QBeeMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0BD1BA12497388F001BDB4A /* QBeeMain.storyboard */; };
 		F700222C1EC479840080073F /* Custom.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F700222B1EC479840080073F /* Custom.xcassets */; };
 		F700222D1EC479840080073F /* Custom.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F700222B1EC479840080073F /* Custom.xcassets */; };
 		F70022B31EC4C9100080073F /* OCActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = F70022671EC4C9100080073F /* OCActivity.m */; };
@@ -711,9 +726,24 @@
 		3781B9B123DB2B9F006B4B1D /* CCMain+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CCMain+Menu.swift"; sourceTree = "<group>"; };
 		3781B9B323DB2BC9006B4B1D /* CCFavorites+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CCFavorites+Menu.swift"; sourceTree = "<group>"; };
 		37ECC83A23D0C7400082EFA2 /* NCMenuAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMenuAction.swift; sourceTree = "<group>"; };
+		A0241F5F249B6C6B0048BDA5 /* QBeeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QBeeAPI.swift; sourceTree = "<group>"; };
+		A0241F60249B6C6B0048BDA5 /* QBeeSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QBeeSignIn.swift; sourceTree = "<group>"; };
+		A0241F61249B6C6C0048BDA5 /* QBeeSetUpQBee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QBeeSetUpQBee.swift; sourceTree = "<group>"; };
+		A0241F62249B6C6C0048BDA5 /* QBeeSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QBeeSignUp.swift; sourceTree = "<group>"; };
+		A0241F63249B6C6C0048BDA5 /* QBeeMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QBeeMain.swift; sourceTree = "<group>"; };
+		A0241F64249B6C6D0048BDA5 /* QBeeVerifyYourAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QBeeVerifyYourAccount.swift; sourceTree = "<group>"; };
+		A03AE74A2497AA5500E2E7F7 /* Ethernet1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ethernet1.swift; sourceTree = "<group>"; };
+		A03AE74C2497AAA800E2E7F7 /* Ethernet2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ethernet2.swift; sourceTree = "<group>"; };
+		A03AE74E2497AB0100E2E7F7 /* Ethernet3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ethernet3.swift; sourceTree = "<group>"; };
+		A03AE7502497AB0E00E2E7F7 /* Ethernet4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ethernet4.swift; sourceTree = "<group>"; };
+		A03AE7522497AB1E00E2E7F7 /* Ethernet5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ethernet5.swift; sourceTree = "<group>"; };
+		A03AE7542497AB3400E2E7F7 /* Ethernet6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ethernet6.swift; sourceTree = "<group>"; };
+		A03C4261248613BD00394B86 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		A05F4516249CF36F0080BFCD /* SwiftUseJavaScriptDemo_2v2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SwiftUseJavaScriptDemo_2v2.html; sourceTree = "<group>"; };
 		A0A89B13244C4EAC00061155 /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = Carthage/Build/iOS/AppCenter.framework; sourceTree = "<group>"; };
 		A0A89B17244C4EC400061155 /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = Carthage/Build/iOS/AppCenterAnalytics.framework; sourceTree = "<group>"; };
 		A0A89B1A244C4EDA00061155 /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = Carthage/Build/iOS/AppCenterCrashes.framework; sourceTree = "<group>"; };
+		A0BD1BA12497388F001BDB4A /* QBeeMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QBeeMain.storyboard; sourceTree = "<group>"; };
 		F700222B1EC479840080073F /* Custom.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Custom.xcassets; sourceTree = "<group>"; };
 		F70022661EC4C9100080073F /* OCActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCActivity.h; sourceTree = "<group>"; };
 		F70022671EC4C9100080073F /* OCActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCActivity.m; sourceTree = "<group>"; };
@@ -1536,6 +1566,7 @@
 				F7C40BF1219994F20004137E /* KTVHTTPCache.framework in Frameworks */,
 				F7C40C102199BA5D0004137E /* Realm.framework in Frameworks */,
 				F774264122EB3F7300B23912 /* DropDown.framework in Frameworks */,
+				A03C4262248613BD00394B86 /* CloudKit.framework in Frameworks */,
 				F7D4B69B2295666E000C2C86 /* GoogleMobileVision.framework in Frameworks */,
 				F75153242226920200323DDC /* FastScroll.framework in Frameworks */,
 				F7C40C122199BA620004137E /* RealmSwift.framework in Frameworks */,
@@ -1577,6 +1608,35 @@
 				3704EB2923D5A58400455C5B /* NCMenu.storyboard */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		A03AE7352497A13600E2E7F7 /* EthernetQBee */ = {
+			isa = PBXGroup;
+			children = (
+				A03AE74A2497AA5500E2E7F7 /* Ethernet1.swift */,
+				A03AE74C2497AAA800E2E7F7 /* Ethernet2.swift */,
+				A03AE74E2497AB0100E2E7F7 /* Ethernet3.swift */,
+				A03AE7522497AB1E00E2E7F7 /* Ethernet5.swift */,
+				A03AE7542497AB3400E2E7F7 /* Ethernet6.swift */,
+				A03AE7502497AB0E00E2E7F7 /* Ethernet4.swift */,
+			);
+			path = EthernetQBee;
+			sourceTree = "<group>";
+		};
+		A0BD1B9E249737D5001BDB4A /* QBee */ = {
+			isa = PBXGroup;
+			children = (
+				A03AE7352497A13600E2E7F7 /* EthernetQBee */,
+				A0BD1BA12497388F001BDB4A /* QBeeMain.storyboard */,
+				A0241F5F249B6C6B0048BDA5 /* QBeeAPI.swift */,
+				A0241F63249B6C6C0048BDA5 /* QBeeMain.swift */,
+				A0241F61249B6C6C0048BDA5 /* QBeeSetUpQBee.swift */,
+				A0241F60249B6C6B0048BDA5 /* QBeeSignIn.swift */,
+				A0241F62249B6C6C0048BDA5 /* QBeeSignUp.swift */,
+				A0241F64249B6C6D0048BDA5 /* QBeeVerifyYourAccount.swift */,
+				A05F4516249CF36F0080BFCD /* SwiftUseJavaScriptDemo_2v2.html */,
+			);
+			path = QBee;
 			sourceTree = "<group>";
 		};
 		F70022561EC4C9100080073F /* OCCommunicationLib */ = {
@@ -2853,6 +2913,7 @@
 		F7F67BAA1A24D27800EE80DA /* iOSClient */ = {
 			isa = PBXGroup;
 			children = (
+				A0BD1B9E249737D5001BDB4A /* QBee */,
 				F70F02A81C889183008DAB36 /* Libraries external */,
 				F70022561EC4C9100080073F /* OCCommunicationLib */,
 				F7C1CDD91E6DFC6F005D92BE /* Brand */,
@@ -2917,6 +2978,7 @@
 		F7FC7D541DC1F93700BB2C6A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A03C4261248613BD00394B86 /* CloudKit.framework */,
 				A0A89B1A244C4EDA00061155 /* AppCenterCrashes.framework */,
 				A0A89B17244C4EC400061155 /* AppCenterAnalytics.framework */,
 				A0A89B13244C4EAC00061155 /* AppCenter.framework */,
@@ -3093,12 +3155,13 @@
 				TargetAttributes = {
 					2C33C47E23E2C475005F963B = {
 						CreatedOnToolsVersion = 11.3.1;
-						DevelopmentTeam = EBUX4JTAPN;
+						DevelopmentTeam = 352B3NNBK2;
 						ProvisioningStyle = Automatic;
 					};
 					F71459B41D12E3B700CAFEEC = {
-						DevelopmentTeam = EBUX4JTAPN;
+						DevelopmentTeam = 352B3NNBK2;
 						LastSwiftMigration = 1020;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -3110,12 +3173,12 @@
 					};
 					F771E3CF20E2392D00AFB62D = {
 						CreatedOnToolsVersion = 9.4.1;
-						DevelopmentTeam = EBUX4JTAPN;
+						DevelopmentTeam = 352B3NNBK2;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					F77B0DEB1D118A16002130FE = {
-						DevelopmentTeam = EBUX4JTAPN;
+						DevelopmentTeam = 352B3NNBK2;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -3260,12 +3323,14 @@
 				F78F74342163757000C2ADAD /* NCTrash.storyboard in Resources */,
 				F7D4234E1F0596AC009C9782 /* Reader-Thumbs@2x.png in Resources */,
 				F760F78521F21F61006B1A73 /* EmojiCollectionViewCell.xib in Resources */,
+				A0BD1BA22497388F001BDB4A /* QBeeMain.storyboard in Resources */,
 				F79A65C32191D90F00FF6DCC /* NCSelect.storyboard in Resources */,
 				F7F54D001E5B14C700E19C62 /* UIBarButtonItemGrid.png in Resources */,
 				F7F54CFE1E5B14C700E19C62 /* UIBarButtonItemArrowRight@2x.png in Resources */,
 				F7F54D031E5B14C800E19C62 /* VideoOverlay.png in Resources */,
 				F7F54CE81E5B14C700E19C62 /* ImageSelectedOff.png in Resources */,
 				F7D4234B1F0596AC009C9782 /* Reader-Print@2x.png in Resources */,
+				A05F4517249CF3700080BFCD /* SwiftUseJavaScriptDemo_2v2.html in Resources */,
 				F7169A1E1EE590930086BD69 /* NCSharesCell.xib in Resources */,
 				F73D71641F2674A400E233EB /* NCText.storyboard in Resources */,
 				F7226EDC1EE4089300EBECB1 /* Main.storyboard in Resources */,
@@ -3609,6 +3674,7 @@
 				F77B0DF41D118A16002130FE /* CCMain.m in Sources */,
 				F7AE00F8230E81CB007ACF8A /* NCBrowserWeb.swift in Sources */,
 				F7E9C41B20F4CA870040CF18 /* CCTransfers.m in Sources */,
+				A0241F65249B6C6D0048BDA5 /* QBeeAPI.swift in Sources */,
 				F73B4F0D1F470D9100BBEE4B /* nsLatin1Prober.cpp in Sources */,
 				F77B0DF51D118A16002130FE /* CCUtility.m in Sources */,
 				F762CB071EACB66200B38484 /* XLFormOptionsObject.m in Sources */,
@@ -3630,6 +3696,7 @@
 				F754EECA21772B6100BB1CDF /* DropUpMenu.swift in Sources */,
 				F77B0E041D118A16002130FE /* UIImage+animatedGIF.m in Sources */,
 				F7D423881F0596C6009C9782 /* ReaderThumbView.m in Sources */,
+				A0241F67249B6C6D0048BDA5 /* QBeeSetUpQBee.swift in Sources */,
 				37ECC83B23D0C7410082EFA2 /* NCMenuAction.swift in Sources */,
 				F73B4EFE1F470D9100BBEE4B /* LangHungarianModel.cpp in Sources */,
 				F7D4238A1F0596C6009C9782 /* ThumbsMainToolbar.m in Sources */,
@@ -3699,8 +3766,10 @@
 				F700510522DF6A89003A3356 /* NCShare.swift in Sources */,
 				F762CAF81EACB66200B38484 /* XLFormButtonCell.m in Sources */,
 				F7CA1ED120E7E3FE002CC65E /* PKCircleProgressView.m in Sources */,
+				A03AE74F2497AB0100E2E7F7 /* Ethernet3.swift in Sources */,
 				F762CAFC1EACB66200B38484 /* XLFormImageCell.m in Sources */,
 				F72D1007210B6882009C96B7 /* NCPushNotificationEncryption.m in Sources */,
+				A03AE74D2497AAA800E2E7F7 /* Ethernet2.swift in Sources */,
 				F70022D11EC4C9100080073F /* OCUserProfile.m in Sources */,
 				F73B4EF61F470D9100BBEE4B /* LangArabicModel.cpp in Sources */,
 				F7CA1ED420E7E3FE002CC65E /* PKPendingView.m in Sources */,
@@ -3723,14 +3792,17 @@
 				F760F78D21F21F61006B1A73 /* Protocols.swift in Sources */,
 				F762CAFF1EACB66200B38484 /* XLFormPickerCell.m in Sources */,
 				F7A321AD1E9E6AD50069AD1B /* CCAdvanced.m in Sources */,
+				A03AE7552497AB3400E2E7F7 /* Ethernet6.swift in Sources */,
 				F73CC0781E813DFF006E3047 /* BKShiftingView.m in Sources */,
 				F7A3218C1E9E42B30069AD1B /* CCMenuAccount.m in Sources */,
 				F77B0E4C1D118A16002130FE /* CCDetail.m in Sources */,
 				F762CB191EACB66200B38484 /* XLFormValidator.m in Sources */,
 				F760F78C21F21F61006B1A73 /* StickersViewController.swift in Sources */,
 				F762CB0D1EACB66200B38484 /* NSArray+XLFormAdditions.m in Sources */,
+				A0241F66249B6C6D0048BDA5 /* QBeeSignIn.swift in Sources */,
 				F77B0E4F1D118A16002130FE /* CCManageAutoUpload.m in Sources */,
 				F7FCFFE01D707B83000E6E29 /* CCPeekPop.m in Sources */,
+				A0241F68249B6C6D0048BDA5 /* QBeeSignUp.swift in Sources */,
 				F760F77D21F21F61006B1A73 /* ColorsCollectionViewDelegate.swift in Sources */,
 				F7BAADC81ED5A87C00B7EAD4 /* NCDatabase.swift in Sources */,
 				F70022E61EC4C9100080073F /* OCXMLServerErrorsParser.m in Sources */,
@@ -3761,6 +3833,7 @@
 				F7417DB3216CE925007D05F5 /* NCTrashSectionHeaderFooter.swift in Sources */,
 				F7F878AE1FB9E3B900599E4F /* NCEndToEndMetadata.swift in Sources */,
 				F7DBC37C23325E02001A85BA /* NCAppConfigView.swift in Sources */,
+				A0241F6A249B6C6D0048BDA5 /* QBeeVerifyYourAccount.swift in Sources */,
 				F762CB141EACB66200B38484 /* XLFormRightImageButton.m in Sources */,
 				F73D71621F2673C200E233EB /* NCText.swift in Sources */,
 				F73B4EF81F470D9100BBEE4B /* LangDanishModel.cpp in Sources */,
@@ -3773,6 +3846,7 @@
 				F73CC06F1E813DFF006E3047 /* BKPasscodeInputView.m in Sources */,
 				F754EECC21772B6100BB1CDF /* SectionHeader.swift in Sources */,
 				F7B174C822FAC0A8000B7579 /* AppDelegate.m in Sources */,
+				A03AE74B2497AA5500E2E7F7 /* Ethernet1.swift in Sources */,
 				F73CC0751E813DFF006E3047 /* BKPasscodeViewController.m in Sources */,
 				F749C10B23C4A5340027D966 /* NCIntroCollectionViewCell.swift in Sources */,
 				F7DBC37F23325E2E001A85BA /* NCXMLGetAppPasswordParser.m in Sources */,
@@ -3798,6 +3872,7 @@
 				F77B0E921D118A16002130FE /* CCCellMainTransfer.m in Sources */,
 				F77B0E981D118A16002130FE /* CCManageAccount.m in Sources */,
 				F762CB011EACB66200B38484 /* XLFormSelectorCell.m in Sources */,
+				A03AE7532497AB1E00E2E7F7 /* Ethernet5.swift in Sources */,
 				F755BD9B20594AC7008C5FBB /* NCService.swift in Sources */,
 				F77B0E9B1D118A16002130FE /* CCBKPasscode.m in Sources */,
 				F760F77F21F21F61006B1A73 /* PhotoEditor+Controls.swift in Sources */,
@@ -3824,6 +3899,7 @@
 				F762CB151EACB66200B38484 /* XLFormRowNavigationAccessoryView.m in Sources */,
 				F762CB0A1EACB66200B38484 /* XLFormDescriptor.m in Sources */,
 				F7D4238C1F0596C6009C9782 /* UIXToolbarView.m in Sources */,
+				A0241F69249B6C6D0048BDA5 /* QBeeMain.swift in Sources */,
 				F7020FCE2233D7F700B7297D /* NCCreateFormUploadVoiceNote.swift in Sources */,
 				F7F4B1D823C74B3E00D82A6E /* NCRichWorkspace.swift in Sources */,
 				F726EEEC1FED1C820030B9C8 /* NCEndToEndInitialize.swift in Sources */,
@@ -3866,6 +3942,7 @@
 				F7CA1ED820E7E3FE002CC65E /* PKBorderedButton.m in Sources */,
 				F7D4237B1F0596C6009C9782 /* ReaderContentPage.m in Sources */,
 				F73B4F0A1F470D9100BBEE4B /* nsEUCTWProber.cpp in Sources */,
+				A03AE7512497AB0E00E2E7F7 /* Ethernet4.swift in Sources */,
 				F765608F23BF813600765969 /* NCContentPresenter.swift in Sources */,
 				F762CB091EACB66200B38484 /* XLFormViewController.m in Sources */,
 				F760F79621F21F61006B1A73 /* PhotoEditorViewController.swift in Sources */,
@@ -3996,7 +4073,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = EBUX4JTAPN;
+				DEVELOPMENT_TEAM = 352B3NNBK2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -4017,7 +4094,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.askey.qbee.m.Notification-Service-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evermore.qbee.m.NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
@@ -4047,7 +4124,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = EBUX4JTAPN;
+				DEVELOPMENT_TEAM = 352B3NNBK2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -4067,7 +4144,7 @@
 				MARKETING_VERSION = 2.25.9;
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.askey.qbee.m.Notification-Service-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evermore.qbee.m.NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
@@ -4086,11 +4163,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CODE_SIGN_ENTITLEMENTS = iOSClient/Brand/Share.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = EBUX4JTAPN;
+				DEVELOPMENT_TEAM = 352B3NNBK2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -4109,8 +4187,9 @@
 				LIBRARY_SEARCH_PATHS = "\"Libraries external\"/**";
 				MARKETING_VERSION = 2.25.9;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.askey.qbee.m.Share;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evermore.qbee.m.Share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Share/Share-Bridging-Header.h";
@@ -4130,11 +4209,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = NO;
 				CODE_SIGN_ENTITLEMENTS = iOSClient/Brand/Share.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = EBUX4JTAPN;
+				DEVELOPMENT_TEAM = 352B3NNBK2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -4153,8 +4233,9 @@
 				LIBRARY_SEARCH_PATHS = "\"Libraries external\"/**";
 				MARKETING_VERSION = 2.25.9;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.askey.qbee.m.Share;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evermore.qbee.m.Share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Share/Share-Bridging-Header.h";
@@ -4184,7 +4265,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = EBUX4JTAPN;
+				DEVELOPMENT_TEAM = 352B3NNBK2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -4203,7 +4284,7 @@
 				LIBRARY_SEARCH_PATHS = "\"Libraries external\"/**";
 				MARKETING_VERSION = 2.25.9;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.askey.qbee.m.File-Provider-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evermore.qbee.m.FileProviderExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
@@ -4234,7 +4315,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = EBUX4JTAPN;
+				DEVELOPMENT_TEAM = 352B3NNBK2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -4253,7 +4334,7 @@
 				LIBRARY_SEARCH_PATHS = "\"Libraries external\"/**";
 				MARKETING_VERSION = 2.25.9;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.askey.qbee.m.File-Provider-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evermore.qbee.m.FileProviderExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
@@ -4275,7 +4356,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = EBUX4JTAPN;
+				DEVELOPMENT_TEAM = 352B3NNBK2;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4295,7 +4376,7 @@
 				MARKETING_VERSION = 2.25.9;
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.askey.qbee.m;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evermore.qbee.m;
 				PRODUCT_NAME = QBee;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4322,7 +4403,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = EBUX4JTAPN;
+				DEVELOPMENT_TEAM = 352B3NNBK2;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4340,7 +4421,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				MARKETING_VERSION = 2.25.9;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.askey.qbee.m;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evermore.qbee.m;
 				PRODUCT_NAME = QBee;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

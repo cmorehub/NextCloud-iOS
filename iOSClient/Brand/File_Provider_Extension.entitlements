@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.m.qbee.askey.com</string>
+		<string>group.m.qbee.evermore.com</string>
 	</array>
 	<key>keychain-access-groups</key>
 	<array>

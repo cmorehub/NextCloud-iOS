@@ -56,11 +56,6 @@ class NCViewerMedia: NSObject {
         if CCUtility.fileProviderStorageExists(metadata.ocId, fileNameView: metadata.fileNameView) {
         
             self.videoURL = URL(fileURLWithPath: CCUtility.getDirectoryProviderStorageOcId(metadata.ocId, fileNameView: metadata.fileNameView))
-            print("================")
-            print(self.videoURL)
-            print("================")
-            print(metadata.ocId)
-            print("================")
             videoURLProxy = videoURL
         
         } else {
@@ -84,9 +79,6 @@ class NCViewerMedia: NSObject {
         }
         
         appDelegate.player = AVPlayer(url: videoURLProxy)
-        print("=================")
-        print(videoURLProxy)
-        print("=================")
         appDelegate.playerController = AVPlayerViewController()
         
         appDelegate.playerController.player = appDelegate.player

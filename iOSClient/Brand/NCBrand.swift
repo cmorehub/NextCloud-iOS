@@ -65,7 +65,7 @@ import UIKit
     @objc public var folderDefaultAutoUpload:           String = "Photos"
     
     // Capabilities Group
-    @objc public var capabilitiesGroups:                String = "group.m.qbee.askey.com"
+    @objc public var capabilitiesGroups:                String = "group.m.qbee.evermore.com"
     
     // User Agent
     @objc public var userAgent:                         String = "Nextcloud-iOS"                                    // Don't touch me !!

@@ -113,10 +113,6 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
         
     @objc func reloadData() {
         let shares = NCManageDatabase.sharedInstance.getTableShares(metadata: metadata!)
-        print("=====NCShare.swift reloadData metadata=====")
-        print(metadata!)
-        print("=====NCShare.swift reloadData shares=====")
-        print(shares)
         if shares.firstShareLink == nil {
             buttonMenu.setImage(CCGraphics.changeThemingColorImage(UIImage.init(named: "shareAdd"), width: 100, height: 100, color: UIColor.gray), for: .normal)
             buttonCopy.isHidden = true
@@ -142,10 +138,6 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
 
         let shares = NCManageDatabase.sharedInstance.getTableShares(metadata: metadata)
         tapCopy(with: shares.firstShareLink, sender: sender)
-        print("=====NCShare.swift touchUpInsideButtonCopy metadata=====")
-        print(metadata)
-        print("=====NCShare.swift touchUpInsideButtonCopy shares.firstShareLink=====")
-        print(shares.firstShareLink)
     }
     
     @IBAction func touchUpInsideButtonMenu(_ sender: Any) {

@@ -106,7 +106,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     // init object
     self.metadata = [tableMetadata new];
     _hud = [[CCHud alloc] initWithView:[[[UIApplication sharedApplication] delegate] window]];
@@ -160,7 +159,8 @@
     heightRichWorkspace = UIScreen.mainScreen.bounds.size.height/4 + heightSearchBar;
     self.viewRichWorkspace.textViewTopConstraint.constant = heightSearchBar;
     [self.viewRichWorkspace setFrame:CGRectMake(0, 0, self.tableView.frame.size.width, heightRichWorkspace)];
-    
+    [self.viewRichWorkspace.textView setText:@"1231545f"];
+    NSLog(@"CCMain heightRichWorkspace:%f",heightRichWorkspace);
     // Table Header View
     [self.tableView setTableHeaderView:self.viewRichWorkspace];
     [self.tableView.tableHeaderView addSubview:self.searchController.searchBar];
@@ -3130,12 +3130,13 @@
     tableCapabilities *capabilities = [[NCManageDatabase sharedInstance] getCapabilitesWithAccount:appDelegate.activeAccount];
   
     if (capabilities.versionMajor < k_nextcloud_version_18_0 || self.richWorkspaceText.length == 0 || self.searchController.isActive) {
-                
+
         [self.tableView.tableHeaderView setFrame:CGRectMake(self.tableView.tableHeaderView.frame.origin.x, self.tableView.tableHeaderView.frame.origin.y, self.tableView.frame.size.width, heightSearchBar)];
-        
+
     } else {
         
         [self.viewRichWorkspace setFrame:CGRectMake(self.tableView.tableHeaderView.frame.origin.x, self.tableView.tableHeaderView.frame.origin.y, self.tableView.frame.size.width, heightRichWorkspace)];
+        //NSLog(@"CCmain setTableViewHeader");
     }
     
     [self.viewRichWorkspace loadWithRichWorkspaceText:self.richWorkspaceText];
