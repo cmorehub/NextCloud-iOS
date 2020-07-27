@@ -37,9 +37,12 @@ class Ethernet5: UIViewController {
             if error == "0"{
                 //Successful
                 self.performSegue(withIdentifier: "SuccessfulBindQBeeBox", sender: self)
+                Ethernet6.QBeeBoxMAC = self.QBeeBoxMAC
             }else{
                 //false
                 self.view.showToast(text: description)
+                self.BindButton.isHidden = true
+                self.BackButton.isHidden = false
             }
         })
     }

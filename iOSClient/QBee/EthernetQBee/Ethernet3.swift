@@ -13,6 +13,8 @@ class Ethernet3: UIViewController,NCLoginQRCodeDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        print("QQQQQQviewDidLoad")
     }
     @IBAction func ButtonTouchUpInside(_ sender: Any) {
         let qrcode=NCLoginQRCode(delegate: self)
@@ -21,14 +23,26 @@ class Ethernet3: UIViewController,NCLoginQRCodeDelegate {
     
     func dismissQRCode(_ value: String?, metadataType: String?) {
         if value != nil{
-            print(value!)
+            print("QQQQQQdismissQRCode" + value!)
             QRCodeGetQBeeMAC = value!
+
+            let alertController = UIAlertController(title:"Successful QRCode Scan", message:
+              "device address = \(QRCodeGetQBeeMAC)", preferredStyle:
+                UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (alertAction) in
+                self.performSegue(withIdentifier: "SuccessfulGetMAC", sender: self)
+            }
+            
+            alertController.addAction(okAction)
+
+            self.present(alertController, animated:true, completion: nil)
         }
     }
-    
     override func viewDidAppear(_ animated: Bool) {
-        print("viewDidAppear:\(QRCodeGetQBeeMAC)")
+        print("QQQQQQviewDidAppear:\(QRCodeGetQBeeMAC)")
         if QRCodeGetQBeeMAC != "" {
+
+            print("QQQQQQQRCodeGetQBeeMAC != :\(QRCodeGetQBeeMAC)")
             self.performSegue(withIdentifier: "SuccessfulGetMAC", sender: self)
         }
     }

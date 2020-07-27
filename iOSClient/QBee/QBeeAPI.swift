@@ -22,8 +22,10 @@ class QBeeAPI{
 
     public static let shared = QBeeAPI()
     var QBeeBoxMAC  = NSMutableSet()
+    static var QBeeUserBoxMAC = ""
     var QBeeUser: [String:String] = ["Account":"","Password":""]
-    let RegisterUrl = URL(string: "https://askeyqb.com/askey_macbind.php")
+    var AccountBindQBee: [String:String] = [:] // to askey QBee Login
+    let RegisterUrl = URL(string: "http://askeyqb.com/askey_macbind.php")
  
     func mailCheck(mail: String,completionHandler:@escaping(_ error:String, _ description:String)->Void) {
         var request = URLRequest(url: RegisterUrl!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
@@ -239,17 +241,17 @@ extension QBeeSignUp: UITextFieldDelegate {
     }
 }
 
-extension QBeeVerifyYourAccount: UITextFieldDelegate {
-    //按下Return
-    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return true
-    }
-    //點擊其他地方
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-}
+//extension QBeeVerifyYourAccount: UITextFieldDelegate {
+//    //按下Return
+//    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        self.view.endEditing(true)
+//        return true
+//    }
+//    //點擊其他地方
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        self.view.endEditing(true)
+//    }
+//}
 
 //MARK:-
 //MARK:END

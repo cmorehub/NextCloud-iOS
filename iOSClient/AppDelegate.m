@@ -302,30 +302,35 @@
 {
     // test
     if (self.activeAccount.length == 0 || self.maintenanceMode)
+        NSLog(@"===== AppDelegate 305=====");
         return;
     
     // check unauthorized server (401)
     if ([CCUtility getPassword:self.activeAccount].length == 0) {
-        
+        NSLog(@"===== AppDelegate 310=====");
+
         [self openLoginView:self.window.rootViewController selector:k_intro_login openLoginWeb:true];
     }
     
     // check certificate untrusted (-1202)
     if ([CCUtility getCertificateError:self.activeAccount]) {
+        [self.timerErrorNetworking invalidate];
+        [[NCNetworking sharedInstance] wrtiteCertificateWithDirectoryCertificate:[CCUtility getDirectoryCerificates]];
+        [self startTimerErrorNetworking];
         
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"_ssl_certificate_untrusted_", nil) message:NSLocalizedString(@"_connect_server_anyway_", nil)  preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction: [UIAlertAction actionWithTitle:NSLocalizedString(@"_yes_", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [[NCNetworking sharedInstance] wrtiteCertificateWithDirectoryCertificate:[CCUtility getDirectoryCerificates]];
-            [self startTimerErrorNetworking];
-        }]];
-                       
-        [alertController addAction: [UIAlertAction actionWithTitle:NSLocalizedString(@"_no_", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-            [self startTimerErrorNetworking];
-        }]];
-        [self.window.rootViewController presentViewController:alertController animated:YES completion:^{
-            // Stop timer error network
-            [self.timerErrorNetworking invalidate];
-        }];
+//        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"_ssl_certificate_untrusted_", nil) message:NSLocalizedString(@"_connect_server_anyway_", nil)  preferredStyle:UIAlertControllerStyleAlert];
+//        [alertController addAction: [UIAlertAction actionWithTitle:NSLocalizedString(@"_yes_", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+//            [[NCNetworking sharedInstance] wrtiteCertificateWithDirectoryCertificate:[CCUtility getDirectoryCerificates]];
+//            [self startTimerErrorNetworking];
+//        }]];
+//
+//        [alertController addAction: [UIAlertAction actionWithTitle:NSLocalizedString(@"_no_", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+//            [self startTimerErrorNetworking];
+//        }]];
+//        [self.window.rootViewController presentViewController:alertController animated:YES completion:^{
+//            // Stop timer error network
+//            [self.timerErrorNetworking invalidate];
+//        }];
     }
 }
 
@@ -394,9 +399,15 @@
             NSLog(@"=====ad4=====");
             if (!(_activeLogin.isViewLoaded && _activeLogin.view.window)) {
                 
-                _activeLogin = [[UIStoryboard storyboardWithName:@"CCLogin" bundle:nil] instantiateViewControllerWithIdentifier:@"CCLoginNextcloud"];
+//                _activeLogin = [[UIStoryboard storyboardWithName:@"CCLogin" bundle:nil] instantiateViewControllerWithIdentifier:@"CCLoginNextcloud"];
+//
+//                [self showLoginViewController:_activeLogin forContext:viewController];
                 
-                [self showLoginViewController:_activeLogin forContext:viewController];
+                UIViewController *introViewController = [[UIStoryboard storyboardWithName:@"QBeeMain" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+                 
+                UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: introViewController];
+                self.window.rootViewController = navController;
+                [self.window makeKeyAndVisible];
             }
         }
 }
@@ -471,7 +482,7 @@
     [CCUtility clearAllKeysPushNotification:account];
     [CCUtility setCertificateError:account error:false];
     [CCUtility setPassword:account password:nil];
-       
+    NSLog(@"===== AppDelegate.m deleteAccount =====");
     if (wipe) {
         NSArray *listAccount = [[NCManageDatabase sharedInstance] getAccounts];
         if ([listAccount count] > 0) {

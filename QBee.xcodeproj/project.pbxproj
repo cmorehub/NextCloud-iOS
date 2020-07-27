@@ -31,6 +31,7 @@
 		3781B9B223DB2B9F006B4B1D /* CCMain+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781B9B123DB2B9F006B4B1D /* CCMain+Menu.swift */; };
 		3781B9B423DB2BC9006B4B1D /* CCFavorites+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781B9B323DB2BC9006B4B1D /* CCFavorites+Menu.swift */; };
 		37ECC83B23D0C7410082EFA2 /* NCMenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECC83A23D0C7400082EFA2 /* NCMenuAction.swift */; };
+		A01F0CE824B2E7F200CCD047 /* RemoteItQBeeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01F0CE724B2E7F200CCD047 /* RemoteItQBeeAPI.swift */; };
 		A0241F65249B6C6D0048BDA5 /* QBeeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0241F5F249B6C6B0048BDA5 /* QBeeAPI.swift */; };
 		A0241F66249B6C6D0048BDA5 /* QBeeSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0241F60249B6C6B0048BDA5 /* QBeeSignIn.swift */; };
 		A0241F67249B6C6D0048BDA5 /* QBeeSetUpQBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0241F61249B6C6C0048BDA5 /* QBeeSetUpQBee.swift */; };
@@ -45,6 +46,8 @@
 		A03AE7552497AB3400E2E7F7 /* Ethernet6.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03AE7542497AB3400E2E7F7 /* Ethernet6.swift */; };
 		A03C4262248613BD00394B86 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03C4261248613BD00394B86 /* CloudKit.framework */; };
 		A05F4517249CF3700080BFCD /* SwiftUseJavaScriptDemo_2v2.html in Resources */ = {isa = PBXBuildFile; fileRef = A05F4516249CF36F0080BFCD /* SwiftUseJavaScriptDemo_2v2.html */; };
+		A0A58FC624B55F1100C88DCD /* RemoteltConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A58FC524B55F1100C88DCD /* RemoteltConnect.swift */; };
+		A0A58FC824B55F3700C88DCD /* RemoteItRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A58FC724B55F3700C88DCD /* RemoteItRest.swift */; };
 		A0A89B14244C4EAC00061155 /* AppCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A89B13244C4EAC00061155 /* AppCenter.framework */; };
 		A0A89B18244C4EC500061155 /* AppCenterAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A89B17244C4EC400061155 /* AppCenterAnalytics.framework */; };
 		A0A89B1B244C4EDA00061155 /* AppCenterCrashes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A89B1A244C4EDA00061155 /* AppCenterCrashes.framework */; };
@@ -726,6 +729,7 @@
 		3781B9B123DB2B9F006B4B1D /* CCMain+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CCMain+Menu.swift"; sourceTree = "<group>"; };
 		3781B9B323DB2BC9006B4B1D /* CCFavorites+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CCFavorites+Menu.swift"; sourceTree = "<group>"; };
 		37ECC83A23D0C7400082EFA2 /* NCMenuAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCMenuAction.swift; sourceTree = "<group>"; };
+		A01F0CE724B2E7F200CCD047 /* RemoteItQBeeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteItQBeeAPI.swift; sourceTree = "<group>"; };
 		A0241F5F249B6C6B0048BDA5 /* QBeeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QBeeAPI.swift; sourceTree = "<group>"; };
 		A0241F60249B6C6B0048BDA5 /* QBeeSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QBeeSignIn.swift; sourceTree = "<group>"; };
 		A0241F61249B6C6C0048BDA5 /* QBeeSetUpQBee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QBeeSetUpQBee.swift; sourceTree = "<group>"; };
@@ -740,9 +744,12 @@
 		A03AE7542497AB3400E2E7F7 /* Ethernet6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ethernet6.swift; sourceTree = "<group>"; };
 		A03C4261248613BD00394B86 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		A05F4516249CF36F0080BFCD /* SwiftUseJavaScriptDemo_2v2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SwiftUseJavaScriptDemo_2v2.html; sourceTree = "<group>"; };
+		A0A58FC524B55F1100C88DCD /* RemoteltConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteltConnect.swift; sourceTree = "<group>"; };
+		A0A58FC724B55F3700C88DCD /* RemoteItRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteItRest.swift; sourceTree = "<group>"; };
 		A0A89B13244C4EAC00061155 /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = Carthage/Build/iOS/AppCenter.framework; sourceTree = "<group>"; };
 		A0A89B17244C4EC400061155 /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = Carthage/Build/iOS/AppCenterAnalytics.framework; sourceTree = "<group>"; };
 		A0A89B1A244C4EDA00061155 /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = Carthage/Build/iOS/AppCenterCrashes.framework; sourceTree = "<group>"; };
+		A0A9A01024CAA0A600E7DFA4 /* QBEE.der */ = {isa = PBXFileReference; lastKnownFileType = file; name = QBEE.der; path = ../../../../../QBEE.der; sourceTree = "<group>"; };
 		A0BD1BA12497388F001BDB4A /* QBeeMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QBeeMain.storyboard; sourceTree = "<group>"; };
 		F700222B1EC479840080073F /* Custom.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Custom.xcassets; sourceTree = "<group>"; };
 		F70022661EC4C9100080073F /* OCActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCActivity.h; sourceTree = "<group>"; };
@@ -1610,6 +1617,16 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		A01F0CE624B2E7B700CCD047 /* RemoteItQBee */ = {
+			isa = PBXGroup;
+			children = (
+				A01F0CE724B2E7F200CCD047 /* RemoteItQBeeAPI.swift */,
+				A0A58FC524B55F1100C88DCD /* RemoteltConnect.swift */,
+				A0A58FC724B55F3700C88DCD /* RemoteItRest.swift */,
+			);
+			path = RemoteItQBee;
+			sourceTree = "<group>";
+		};
 		A03AE7352497A13600E2E7F7 /* EthernetQBee */ = {
 			isa = PBXGroup;
 			children = (
@@ -1626,8 +1643,10 @@
 		A0BD1B9E249737D5001BDB4A /* QBee */ = {
 			isa = PBXGroup;
 			children = (
+				A01F0CE624B2E7B700CCD047 /* RemoteItQBee */,
 				A03AE7352497A13600E2E7F7 /* EthernetQBee */,
 				A0BD1BA12497388F001BDB4A /* QBeeMain.storyboard */,
+				A0A9A01024CAA0A600E7DFA4 /* QBEE.der */,
 				A0241F5F249B6C6B0048BDA5 /* QBeeAPI.swift */,
 				A0241F63249B6C6C0048BDA5 /* QBeeMain.swift */,
 				A0241F61249B6C6C0048BDA5 /* QBeeSetUpQBee.swift */,
@@ -3737,6 +3756,7 @@
 				F7B6ACD622FC2BD4008AB646 /* NCXMLCommentsParser.m in Sources */,
 				F738E8421F90FFD100F95C8E /* NCManageEndToEndEncryption.m in Sources */,
 				F78A18B823CDE2B300F681F3 /* NCViewerRichWorkspace.swift in Sources */,
+				A0A58FC624B55F1100C88DCD /* RemoteltConnect.swift in Sources */,
 				F78A18B623CDD07D00F681F3 /* NCViewerRichWorkspaceWebView.swift in Sources */,
 				F75A9EE623796C6F0044CFCE /* NCNetworking.swift in Sources */,
 				F760F79D21F21F61006B1A73 /* CropRectView.swift in Sources */,
@@ -3806,6 +3826,7 @@
 				F760F77D21F21F61006B1A73 /* ColorsCollectionViewDelegate.swift in Sources */,
 				F7BAADC81ED5A87C00B7EAD4 /* NCDatabase.swift in Sources */,
 				F70022E61EC4C9100080073F /* OCXMLServerErrorsParser.m in Sources */,
+				A0A58FC824B55F3700C88DCD /* RemoteItRest.swift in Sources */,
 				F75C0C4823D1FAE300163CC8 /* NCRichWorkspaceCommon.swift in Sources */,
 				F762CB171EACB66200B38484 /* XLFormRegexValidator.m in Sources */,
 				F729B92D217A2F1B00FE2150 /* NCActionSheetHeaderView.swift in Sources */,
@@ -3919,6 +3940,7 @@
 				F7A321551E9E2A070069AD1B /* CCFavorites.m in Sources */,
 				F704FA5C232A343F00BBA952 /* IMImagemeterViewer.swift in Sources */,
 				F73B4F031F470D9100BBEE4B /* LangVietnameseModel.cpp in Sources */,
+				A01F0CE824B2E7F200CCD047 /* RemoteItQBeeAPI.swift in Sources */,
 				F73B4F021F470D9100BBEE4B /* LangTurkishModel.cpp in Sources */,
 				F7F54D0B1E5B14C800E19C62 /* MWTapDetectingImageView.m in Sources */,
 				F72747762382E31600E9B76D /* IMCreate.swift in Sources */,

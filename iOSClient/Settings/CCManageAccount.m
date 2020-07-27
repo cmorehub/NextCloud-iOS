@@ -92,22 +92,22 @@
         
         section = [XLFormSectionDescriptor formSectionWithTitle:NSLocalizedString(@"_manage_account_", nil)];
         [form addFormSection:section];
-        
+        //mark add account by Jeff 20200720 
         // Brand
-        if ([NCBrandOptions sharedInstance].disable_multiaccount == NO) {
-            
-            // New Account nextcloud
-            
-            row = [XLFormRowDescriptor formRowDescriptorWithTag:@"addAccount" rowType:XLFormRowDescriptorTypeButton title:NSLocalizedString(@"_add_account_", nil)];
-            row.cellConfigAtConfigure[@"backgroundColor"] = NCBrandColor.sharedInstance.backgroundView;
-            [row.cellConfig setObject:[UIFont systemFontOfSize:15.0] forKey:@"textLabel.font"];
-            [row.cellConfig setObject:[CCGraphics changeThemingColorImage:[UIImage imageNamed:@"add"] multiplier:2 color:NCBrandColor.sharedInstance.icon] forKey:@"imageView.image"];
-            [row.cellConfig setObject:@(NSTextAlignmentLeft) forKey:@"textLabel.textAlignment"];
-            [row.cellConfig setObject:NCBrandColor.sharedInstance.textView forKey:@"textLabel.textColor"];
-            row.action.formSelector = @selector(addAccount:);
-            [section addFormRow:row];
-             
-        }
+//        if ([NCBrandOptions sharedInstance].disable_multiaccount == NO) {
+//
+//            // New Account nextcloud
+//
+//            row = [XLFormRowDescriptor formRowDescriptorWithTag:@"addAccount" rowType:XLFormRowDescriptorTypeButton title:NSLocalizedString(@"_add_account_", nil)];
+//            row.cellConfigAtConfigure[@"backgroundColor"] = NCBrandColor.sharedInstance.backgroundView;
+//            [row.cellConfig setObject:[UIFont systemFontOfSize:15.0] forKey:@"textLabel.font"];
+//            [row.cellConfig setObject:[CCGraphics changeThemingColorImage:[UIImage imageNamed:@"add"] multiplier:2 color:NCBrandColor.sharedInstance.icon] forKey:@"imageView.image"];
+//            [row.cellConfig setObject:@(NSTextAlignmentLeft) forKey:@"textLabel.textAlignment"];
+//            [row.cellConfig setObject:NCBrandColor.sharedInstance.textView forKey:@"textLabel.textColor"];
+//            row.action.formSelector = @selector(addAccount:);
+//            [section addFormRow:row];
+//
+//        }
         
         // delete Account
         
@@ -318,6 +318,7 @@
     // Open Login
     if (listAccount.count == 0) {
         [appDelegate openLoginView:self selector:k_intro_login openLoginWeb:false];
+        
     }
 }
 
@@ -390,6 +391,7 @@
         NSString *account = tableAccount.account;
         
         if (account) {
+            NSLog(@"=======CCMangeAccount delectAccount is run!!!!! OMG ======");
             [appDelegate deleteAccount:account wipe:false];
         }
         

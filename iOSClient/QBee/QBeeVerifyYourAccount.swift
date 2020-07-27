@@ -12,17 +12,34 @@ class QBeeVerifyYourAccount: UIViewController {
     
     var EmailAddress = ""
     
-    @IBOutlet weak var EmailState: UITextView!
+    @IBOutlet weak var EmailState: UILabel!
     @IBOutlet weak var VerificationCodeTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
     @IBOutlet weak var ConfirmPasswordTextField: UITextField!
     @IBOutlet weak var VerifyYourAccountButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            self.EmailState.text = "We have sent you a verification code to \(self.EmailAddress),please check your email"
-            
-        
+        self.EmailState.text = "\nWe have sent you a verification code to \(self.EmailAddress),please check your email\n"
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardApear), name: UIResponder.keyboardWillShowNotification ,object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisapear),name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    var isExpand : Bool = false
+    @objc func keyboardApear(){
+        print("Call")
+        if !isExpand {
+            print("Call = EXECUTE")
+            self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.scrollView.frame.height + 300)
+            isExpand = true
+        }
+    }
+    @objc func keyboardDisapear(){
+        if isExpand{
+            self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.scrollView.frame.height - 300)
+            self.isExpand = false
+        }
     }
     
 
@@ -58,6 +75,7 @@ class QBeeVerifyYourAccount: UIViewController {
     //MARK:-
     //MARK:按下Button的事件
     @IBAction func ButtonTouchUpInside(_ sender: Any) {
+        self.view.endEditing(true)
         //若密碼錯誤
         guard CheckPassword() else{//若條件為False則不繼續往下執行
             return
@@ -84,6 +102,9 @@ class QBeeVerifyYourAccount: UIViewController {
                         //account registeration successfully
                         self.view.showToast(text: description)
                         print(description)
+                        QBeeAPI.shared.QBeeUser["Account"] = self.EmailAddress
+                        QBeeAPI.shared.QBeeUser["Password"] =
+                            self.PasswordTextField.text!
                         self.performSegue(withIdentifier: "RegisterUserButton", sender: self)
                     })
                 }else{
@@ -95,4 +116,41 @@ class QBeeVerifyYourAccount: UIViewController {
         })
         
     }
+    //MARK:-
+    //MARK:關於鍵盤問題
+//    private func registerForKeyboardNotifications(){
+//        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil,queue: nil){
+//            [weak self] (aNoti) in
+//            guard let self = self else { return }
+//            self.keyboardWasShown(aNoti)
+//        }
+//        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil){
+//            [weak self] (aNoti) in
+//            guard let self = self else { return }
+//            self.keyboardWillBeHidden(aNoti)
+//        }
+//    }
+//    private func resignKeyboardNotifications(){
+//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+//    }
+//    private func keyboardWasShown(_ aNotification: Notification?) {
+//        let info = aNotification?.userInfo
+//        guard let kbSize = (info?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size else { return }
+//        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: kbSize.height, right: 0.0)
+//        scrollView.contentInset = contentInsets
+//    }
+//    private func keyboardWillBeHidden(_ aNotification: Notification?) {
+//        let contentInsets: UIEdgeInsets = .zero
+//        scrollView.contentInset = contentInsets
+//    }
+//    private func addTapGesture(){
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+//        scrollView.addGestureRecognizer(tap)
+//    }
+//    @objc private func hideKeyboard(){
+//        self.view.endEditing(true)
+//    }
+
 }
+

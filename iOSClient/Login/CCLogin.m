@@ -162,6 +162,7 @@
 
 - (void)testUrl
 {
+    NSLog(@"==== CCLogin.m testUrl go =====");
     self.login.enabled = NO;
     [self.activity startAnimating];
     

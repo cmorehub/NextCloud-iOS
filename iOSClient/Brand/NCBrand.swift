@@ -84,7 +84,7 @@ import UIKit
     @objc public var disable_intro:                     Bool = false
     @objc public var disable_request_login_url:         Bool = false
     @objc public var disable_multiaccount:              Bool = false
-    @objc public var disable_manage_account:            Bool = true
+    @objc public var disable_manage_account:            Bool = false
     @objc public var disable_more_external_site:        Bool = false
     @objc public var disable_openin_file:               Bool = false                                                // Don't touch me !!
     @objc public var disable_crash_service:             Bool = false
