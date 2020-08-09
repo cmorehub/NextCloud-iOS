@@ -21,12 +21,13 @@ class QBeeAPI{
     }
 
     public static let shared = QBeeAPI()
-    var QBeeBoxMAC  = NSMutableSet()
-    static var QBeeUserBoxMAC = ""
+    //var QBeeBoxMAC  = NSMutableSet()//QBee MAC
+    //static var QBeeUserBoxMAC = ""
     var QBeeUser: [String:String] = ["Account":"","Password":""]
     var AccountBindQBee: [String:String] = [:] // to askey QBee Login
     let RegisterUrl = URL(string: "http://askeyqb.com/askey_macbind.php")
  
+    //register: 1.Email check
     func mailCheck(mail: String,completionHandler:@escaping(_ error:String, _ description:String)->Void) {
         var request = URLRequest(url: RegisterUrl!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
         request.httpBody = "type=mailcheck&mail=\(mail)".data(using: .utf8)
@@ -50,7 +51,7 @@ class QBeeAPI{
         }
         dataTask.resume()
     }
-
+    //register: 2.Code check
     func codeCheck(mail:String,code:String,completionHandler:@escaping(_ error:String, _ description:String)->Void) {
         var request = URLRequest(url: RegisterUrl!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
         request.httpBody = ("type=codecheck&mail=" + mail + "&code=" + code).data(using: .utf8)
@@ -74,7 +75,7 @@ class QBeeAPI{
         }
         dataTask.resume()
     }
-
+    //register: 3.register
     func register(mail:String,pwd:String,completionHandler:@escaping(_ error:String, _ description:String)->Void) {
         var request = URLRequest(url: RegisterUrl!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
         request.httpBody = ("type=register&mail=" + mail + "&pwd=" + pwd).data(using: .utf8)
@@ -140,6 +141,22 @@ class QBeeAPI{
                         if let result = json["result"] as? String {
                             if result == "0"{
                                 if let error = json["error"] as? NSArray {
+                                    
+                                    if error.count>0 {
+                                        let datas = error as! [NSDictionary]
+                                        for data in datas{
+                                            
+                                            print(data["mac"] as! String)
+                                            
+                                            if let remote = data["remote"] as? String{
+                                                print(remote)
+                                                QBeeAPI.shared.AccountBindQBee[data["mac"] as! String] = remote
+                                            }else{
+                                                print("NULL")
+                                            }
+                                        }
+                                    }
+                                    
                                     completionHandler(result,error)
                                     
                                 }

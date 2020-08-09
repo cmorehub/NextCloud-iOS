@@ -17,6 +17,7 @@ class QBeeMain: UIViewController {
         LoginButton.layer.borderColor=UIColor.black.cgColor
         LoginButton.layer.borderWidth=0.5
         CreateButton.layer.cornerRadius=12.0
+       
     }
     
     @IBAction func LoginButtonTouchUpInside(_ sender: Any) {

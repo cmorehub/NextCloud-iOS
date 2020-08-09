@@ -531,7 +531,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qQe-6G-S0g">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ccmaped@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qQe-6G-S0g">
                                 <rect key="frame" x="30" y="350" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -545,7 +545,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BN2-Rr-FWy">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="maped1234" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BN2-Rr-FWy">
                                 <rect key="frame" x="30" y="443" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -974,6 +974,7 @@
                         <outlet property="PleaseWaitLabel" destination="RYM-uT-0hf" id="bQr-B0-gOS"/>
                         <outlet property="RefushButton" destination="541-bD-3uA" id="lJk-0C-HIC"/>
                         <outlet property="connectButton" destination="4u5-uR-sqV" id="Mnc-n8-qAy"/>
+                        <segue destination="9yb-pG-KVe" kind="showDetail" identifier="AccountNoQBeeMAC" id="eJD-YY-l4f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sag-Z1-Gj9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -983,7 +984,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="PJt-1x-7WQ"/>
-        <segue reference="Eip-1E-DAh"/>
+        <segue reference="eJD-YY-l4f"/>
         <segue reference="QJ7-NW-aBh"/>
         <segue reference="e2I-2G-zrA"/>
     </inferredMetricsTieBreakers>

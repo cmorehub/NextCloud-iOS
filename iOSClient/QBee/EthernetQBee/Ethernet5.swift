@@ -17,19 +17,16 @@ class Ethernet5: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         DeviceIDLabel.text = QBeeBoxMAC
-        if !QBeeAPI.shared.QBeeBoxMAC.contains(QBeeBoxMAC){
+        if let _ = QBeeAPI.shared.AccountBindQBee[QBeeBoxMAC]{
+            DeviceStatusLabel.text = "已綁定過此裝置了"
+            BindButton.isHidden = true
+            BackButton.isHidden = false
+            
+        }else{
             DeviceStatusLabel.text = "未綁定"
             BindButton.isHidden = false
             BackButton.isHidden = true
             print("=====")
-            if !QBeeAPI.shared.QBeeUser.isEmpty{
-                print(QBeeAPI.shared.QBeeUser)
-            }
-
-        }else{
-            DeviceStatusLabel.text = "已綁定過此裝置了"
-            BindButton.isHidden = true
-            BackButton.isHidden = false
         }
     }
     @IBAction func BindButtonTouchUpInside(_ sender: Any) {
@@ -37,7 +34,7 @@ class Ethernet5: UIViewController {
             if error == "0"{
                 //Successful
                 self.performSegue(withIdentifier: "SuccessfulBindQBeeBox", sender: self)
-                Ethernet6.QBeeBoxMAC = self.QBeeBoxMAC
+                //Ethernet6.QBeeBoxMAC = self.QBeeBoxMAC
             }else{
                 //false
                 self.view.showToast(text: description)
@@ -46,4 +43,10 @@ class Ethernet5: UIViewController {
             }
         })
     }
+    //
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dst = (segue.destination as! Ethernet6)
+        dst.QBeeBoxMAC = self.QBeeBoxMAC
+    }
+    
 }

@@ -12,12 +12,9 @@ import Foundation
 class RemoteItRest:RemoteItConnect{
     
     public static let shared = RemoteItRest()
-    var RemoteItData: [String:String] = ["apiKey":"","userToken":"","deviceaddress":"","hostip":"","proxy":"","connectionid":"","ProxyUrl":""]
+    var RemoteItData: [String:String] = ["apiKey":"","userToken":"","proxy":"","connectionid":""]
     //MARK:-
     //MARK:User
-    static let user = "ccmaped@gmail.com"
-    static let password = "maped1234"
-    static let apiKey = "QzlEQ0JDQzItNjYyMC00RjVCLUIwOTgtQkFBQkNCMzgxRUFG"
     //MARK:-
     //MARK:Remote It API
     func connect(user: String, password: String, apiKey: String, deviceAddress: String, callback: @escaping (URL?,String) -> Void) {
@@ -41,7 +38,7 @@ class RemoteItRest:RemoteItConnect{
                                                 callback(URL(string: description),"")
                                             }else{
                                                 callback(nil,description)
-                                                print("QBeeMain.swift RemiteItConnectingToService error")
+                                                print("QBeeMain.swift RemoteItConnectingToService error")
                                                 print("===== Remote It ConnectingToService description : \(description) =====")
                                                 }
                                             })
@@ -53,14 +50,14 @@ class RemoteItRest:RemoteItConnect{
                                     callback(nil,"您的NextCloud尚未綁定,請將NextCloud開機")
                                 }
                             }else{
-                                callback(nil,description["deviceaddress"] as! String)
-                                print("QBeeMain.swift RemiteItListingDevices error")
+                                callback(nil,"RemoteIt ListingDevices error")
+                                print("QBeeMain.swift RemoteItListingDevices error")
                                 print("===== Remote It Listing Devices description : \(description) =====")
                             }
                         })
                 }else{
-                    callback(nil,"")
-                    print("QBeeMain.swift RemiteItLogin error")
+                    callback(nil,description)
+                    print("QBeeMain.swift RemoteItLogin error")
                     print("===== Remote It Login description : \(description) =====")
                 }
             })
