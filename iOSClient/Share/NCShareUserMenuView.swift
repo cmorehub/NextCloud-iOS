@@ -169,6 +169,7 @@ class NCShareUserMenuView: UIView, UIGestureRecognizerDelegate, NCShareNetworkin
     
     // MARK: - Tap viewWindowCalendar
     @objc func tapViewWindowCalendar(gesture: UITapGestureRecognizer) {
+        
         calendar?.removeFromSuperview()
         viewWindowCalendar?.removeFromSuperview()
         

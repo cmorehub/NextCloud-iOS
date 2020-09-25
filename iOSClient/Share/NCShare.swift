@@ -51,6 +51,11 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
     private var networking: NCShareNetworking?
     
     override func viewDidLoad() {
+        
+        
+
+        
+
         super.viewDidLoad()
         
         viewContainerConstraint.constant = height
@@ -103,15 +108,19 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
         // changeTheming
         NotificationCenter.default.addObserver(self, selector: #selector(self.changeTheming), name: NSNotification.Name(rawValue: "changeTheming"), object: nil)
         changeTheming()
+
+        
     }
-    
     @objc func changeTheming() {
         appDelegate.changeTheming(self, tableView: tableView, collectionView: nil, form: true)
         
         shareLinkLabel.textColor = NCBrandColor.sharedInstance.textView
     }
+    
+    
         
     @objc func reloadData() {
+
         let shares = NCManageDatabase.sharedInstance.getTableShares(metadata: metadata!)
         if shares.firstShareLink == nil {
             buttonMenu.setImage(CCGraphics.changeThemingColorImage(UIImage.init(named: "shareAdd"), width: 100, height: 100, color: UIColor.gray), for: .normal)
@@ -126,6 +135,7 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
     // MARK: - IBAction
 
     @IBAction func searchFieldDidEndOnExit(textField: UITextField) {
+
         
         guard let searchString = textField.text else { return }
 
@@ -133,6 +143,7 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
     }
     
     @IBAction func touchUpInsideButtonCopy(_ sender: Any) {
+
         
         guard let metadata = self.metadata else { return }
 
@@ -142,11 +153,12 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
     
     @IBAction func touchUpInsideButtonMenu(_ sender: Any) {
 
+        
         guard let metadata = self.metadata else { return }
         guard let capabilities = NCManageDatabase.sharedInstance.getCapabilites(account: metadata.account) else { return }
         let shares = NCManageDatabase.sharedInstance.getTableShares(metadata: metadata)
-
         if capabilities.isFilesSharingPublicPasswordEnforced && shares.firstShareLink == nil {
+            
             let alertController = UIAlertController(title: NSLocalizedString("_enforce_password_protection_", comment: ""), message: "", preferredStyle: .alert)
             alertController.addTextField { (textField) in
                 textField.isSecureTextEntry = true
@@ -162,13 +174,17 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
             
             self.present(alertController, animated: true, completion:nil)
         } else if shares.firstShareLink == nil {
+            
             networking?.share(password: "", permission: 1, hideDownload: false)
         } else {
+            
             tapMenu(with: shares.firstShareLink!, sender: sender)
         }
     }
     
     @objc func minCharTextFieldDidChange(sender: UITextField) {
+
+        
         guard let alertController = self.presentedViewController as? UIAlertController else { return }
         guard let password = alertController.textFields?.first else { return }
         guard let ok = alertController.actions.last else { return }
@@ -176,6 +192,8 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
     }
     
     @objc func tapLinkMenuViewWindow(gesture: UITapGestureRecognizer) {
+
+        
         shareLinkMenuView?.unLoad()
         shareLinkMenuView = nil
         shareUserMenuView?.unLoad()
@@ -183,14 +201,19 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+
+        
         return gestureRecognizer.view == touch.view
     }
     
     func tapCopy(with tableShare: tableShare?, sender: Any) {
+
+        
         NCShareCommon.sharedInstance.copyLink(tableShare: tableShare, viewController: self, sender: sender)
     }
     
     func switchCanEdit(with tableShare: tableShare?, switch: Bool, sender: UISwitch) {
+
         
         guard let tableShare = tableShare else { return }
         guard let metadata = self.metadata else { return }
@@ -208,10 +231,13 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
     }
     
     func tapMenu(with tableShare: tableShare?, sender: Any) {
+
         
         guard let tableShare = tableShare else { return }
 
         if tableShare.shareType == Int(shareTypeLink.rawValue) {
+
+           
             let views = NCShareCommon.sharedInstance.openViewMenuShareLink(shareViewController: self, tableShare: tableShare, metadata: metadata!)
             shareLinkMenuView = views.shareLinkMenuView
             shareMenuViewWindow = views.viewWindow
@@ -220,6 +246,7 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
             tap.delegate = self
             shareMenuViewWindow?.addGestureRecognizer(tap)
         } else {
+            
             let views = NCShareCommon.sharedInstance.openViewMenuUser(shareViewController: self, tableShare: tableShare, metadata: metadata!)
             shareUserMenuView = views.shareUserMenuView
             shareMenuViewWindow = views.viewWindow
@@ -233,18 +260,30 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
     /// MARK: - NCShareNetworkingDelegate
     
     func readShareCompleted() {
+
+        
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadDataNCShare"), object: nil, userInfo: nil)
     }
     
     func shareCompleted() {
+
+        
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadDataNCShare"), object: nil, userInfo: nil)
     }
     
-    func unShareCompleted() { }
+    func unShareCompleted() {
+
+        
+    }
     
-    func updateShareWithError(idRemoteShared: Int) { }
+    func updateShareWithError(idRemoteShared: Int) {
+
+        
+    }
     
     func getUserAndGroup(items: [OCShareUser]?) {
+
+        
         
         guard let items = items else { return }
 
@@ -322,6 +361,8 @@ class NCShare: UIViewController, UIGestureRecognizerDelegate, NCShareLinkCellDel
 extension NCShare: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+        
         return 60
     }
 }
@@ -331,10 +372,12 @@ extension NCShare: UITableViewDelegate {
 extension NCShare: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
+
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
         
         var numOfRows = 0
         let shares = NCManageDatabase.sharedInstance.getTableShares(metadata: metadata!)
@@ -347,6 +390,7 @@ extension NCShare: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         
         let shares = NCManageDatabase.sharedInstance.getTableShares(metadata: metadata!)
         let tableShare = shares.share![indexPath.row]
@@ -429,6 +473,8 @@ class NCShareLinkCell: UITableViewCell {
     var delegate: NCShareLinkCellDelegate?
     
     override func awakeFromNib() {
+
+        
         super.awakeFromNib()
         
         imageItem.image = NCShareCommon.sharedInstance.createLinkAvatar()
@@ -437,10 +483,14 @@ class NCShareLinkCell: UITableViewCell {
     }
     
     @IBAction func touchUpInsideCopy(_ sender: Any) {
+
+        
         delegate?.tapCopy(with: tableShare, sender: sender)
     }
     
     @IBAction func touchUpInsideMenu(_ sender: Any) {
+
+        
         delegate?.tapMenu(with: tableShare, sender: sender)
     }
 }
@@ -464,6 +514,8 @@ class NCShareUserCell: UITableViewCell {
     var delegate: NCShareUserCellDelegate?
     
     override func awakeFromNib() {
+
+        
         super.awakeFromNib()
         
         switchCanEdit.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
@@ -472,10 +524,14 @@ class NCShareUserCell: UITableViewCell {
     }
     
     @IBAction func switchCanEditChanged(sender: UISwitch) {
+
+        
         delegate?.switchCanEdit(with: tableShare, switch: sender.isOn, sender: sender)
     }
     
     @IBAction func touchUpInsideMenu(_ sender: Any) {
+
+        
         delegate?.tapMenu(with: tableShare, sender: sender)
     }
 }

@@ -38,46 +38,17 @@ class QBeeSignIn: UIViewController {
                             
                             ///TIEN 未來有多台裝置的時候 需要修改
                             for (BoxMAC, _) in QBeeAPI.shared.AccountBindQBee {
-                                
-//                                RemoteItRest.shared.connect(user: RemoteItConnectConstants.user, password: RemoteItConnectConstants.password, apiKey: RemoteItConnectConstants.apiKey, deviceAddress: BoxMAC ) { (url, description) in
-//                                     if let url = url{
-//                                         print(url)
-//                                         self.url = url.absoluteString
-//                                         //self.view.showToast(text: url as! String)
-//                                         self.toNextCloudTest()
-//                                         //self.toNextcloud()
-//                                     }else{
-//                                         print("No Url Error Code: \(description)")
-//                                         self.view.showToast(text: description)
-//                                     }
-//                                 }
-                                
-                                RemoteItP2P.shared.connect(user: RemoteItConnectConstants.user, password: RemoteItConnectConstants.password, apiKey: RemoteItConnectConstants.apiKey, deviceAddress: BoxMAC ) { (url, description) in
-                                    if let url = url{
-                                        print("============QBeeSignIn url ==\(url)")
-                                        //self.url = url.absoluteString
-                                        ConnectNextCloud(viewController: self, url: url.absoluteString).toNextCloudTest()
-                                        //self.toNextCloudTest()
-
-                                    }else{
-                                        print("No Url Error Code: \(description)")
-                                        DispatchQueue.main.async {
-                                            self.view.showToast(text: description)
-                                        }
-                                         RemoteItRest.shared.connect(user: RemoteItConnectConstants.user, password: RemoteItConnectConstants.password, apiKey: RemoteItConnectConstants.apiKey, deviceAddress: BoxMAC ) { (url, description) in
-                                                 if let url = url{
-                                                     print(url)
-                                                     //self.url = url.absoluteString
-                                                     ConnectNextCloud(viewController: self, url: url.absoluteString).toNextCloudTest()
-                                                     //self.toNextCloudTest()
-                                                     //self.toNextcloud()
-                                                 }else{
-                                                     print("No Url Error Code: \(description)")
-                                                     self.view.showToast(text: description)
-                                                 }
-                                             }
-                                    }
+                            print("===BoxMAC==\(BoxMAC)")
+                            RemoteItRest.shared.connect(user: RemoteItConnectConstants.user, password: RemoteItConnectConstants.password, apiKey: RemoteItConnectConstants.apiKey, deviceAddress: BoxMAC ) { (url, description) in
+                                if let url = url{
+                                    print(url)
+                                    ConnectNextCloud(viewController: self, url: url.absoluteString).toNextCloudTest()
+                                }else{
+                                    print("No Url Error Code: \(description)")
+                                    self.view.showToast(text: description)
                                 }
+                            }
+                                
                                 break;
                             }
                             

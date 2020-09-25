@@ -361,7 +361,7 @@ class NCShareLinkMenuView: UIView, UIGestureRecognizerDelegate, NCShareNetworkin
     
     // Delete share link
     @IBAction func buttonDeleteShareLink(sender: UIButton) {
-        
+
         guard let tableShare = self.tableShare else { return }
         
         networking?.unShare(idRemoteShared: tableShare.idRemoteShared)

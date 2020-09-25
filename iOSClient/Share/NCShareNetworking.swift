@@ -85,7 +85,14 @@ class NCShareNetworking: NSObject {
         OCNetworking.sharedManager()?.unshareAccount(metadata.account, shareID: idRemoteShared, completion: { (account, message, errorCode) in
             NCUtility.sharedInstance.stopActivityIndicator()
             if errorCode == 0 {
+
                 NCManageDatabase.sharedInstance.deleteTableShare(account: account!, idRemoteShared: idRemoteShared)
+                
+                //tien 20200924 debug share start
+                self.readShare()
+                //tien 20200924 debug share end
+               
+                
                 self.delegate?.unShareCompleted()
             } else {
                 NCContentPresenter.shared.messageNotification("_share_", description: message, delay: TimeInterval(k_dismissAfterSecond), type: NCContentPresenter.messageType.error, errorCode: 0)

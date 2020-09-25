@@ -64,6 +64,8 @@ extension AppDelegate {
             )
         }
         
+        //tien 20200908 hidden menu start
+        /*
         if appDelegate.reachability.isReachable() && directEditingCreators != nil && directEditingCreators!.contains(where: { $0.editor == k_editor_text}) {
             let directEditingCreator = directEditingCreators!.first(where: { $0.editor == k_editor_text})!
             actions.append(
@@ -93,6 +95,8 @@ extension AppDelegate {
                 })
             )
         }
+        */
+        //tien 20200908 hidden menu end
         
         #if !targetEnvironment(simulator)
             if #available(iOS 11.0, *) {
@@ -126,7 +130,8 @@ extension AppDelegate {
                 }
             )
         )
-
+        //tien 20200908 hidden menu start
+        /*
         if #available(iOS 11.0, *) {
             if let capabilities = NCManageDatabase.sharedInstance.getCapabilites(account: appDelegate.activeAccount) {
                 if (capabilities.versionMajor >= k_nextcloud_version_18_0 && (self.activeMain.richWorkspaceText == nil || self.activeMain.richWorkspaceText.count == 0)) {
@@ -141,7 +146,8 @@ extension AppDelegate {
                     )
                 }
             }
-        }
+        }*/
+        //tien 20200908 hidden menu end
         
         if appDelegate.reachability.isReachable() && directEditingCreators != nil && directEditingCreators!.contains(where: { $0.editor == k_editor_onlyoffice && $0.identifier == k_onlyoffice_docx}) {
             let directEditingCreator = directEditingCreators!.first(where: { $0.editor == k_editor_onlyoffice && $0.identifier == k_onlyoffice_docx})!

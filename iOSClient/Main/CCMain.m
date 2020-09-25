@@ -2744,7 +2744,6 @@
         _dateReadDataSource = nil;
 
     NSDate *dateDateRecordDirectory = tableDirectory.dateReadDirectory;
-    
     if ([dateDateRecordDirectory compare:_dateReadDataSource] == NSOrderedDescending || dateDateRecordDirectory == nil || _dateReadDataSource == nil) {
         
         NSLog(@"[LOG] Rebuild Data Source File : %@", _serverUrl);

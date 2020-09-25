@@ -76,6 +76,7 @@
     if ([self.traitCollection respondsToSelector:@selector(forceTouchCapability)] && (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable))
     {
         [self registerForPreviewingWithDelegate:self sourceView:self.view];
+        
     }
     
     // calculate _serverUrl
@@ -111,6 +112,7 @@
 
 - (void)changeTheming
 {
+
     [appDelegate changeTheming:self tableView:self.tableView collectionView:nil form:false];
 }
 
@@ -120,16 +122,19 @@
 
 - (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView
 {
+
     return NCBrandColor.sharedInstance.backgroundView;
 }
 
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
 {
+
     return [CCGraphics changeThemingColorImage:[UIImage imageNamed:@"favorite"] width:300 height:300 color:NCBrandColor.sharedInstance.yellowFavorite];
 }
 
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
 {
+
     NSString *text = [NSString stringWithFormat:@"%@", NSLocalizedString(@"_favorite_no_files_", nil)];
     
     NSDictionary *attributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:20.0f], NSForegroundColorAttributeName:[UIColor lightGrayColor]};
@@ -139,6 +144,7 @@
 
 - (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
 {
+
     NSString *text = [NSString stringWithFormat:@"\n%@", NSLocalizedString(@"_tutorial_favorite_view_", nil)];
     
     NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
@@ -156,6 +162,7 @@
 
 - (void)settingFavorite:(tableMetadata *)metadata favorite:(BOOL)favorite
 {
+
     NSString *fileNameServerUrl = [CCUtility returnFileNamePathFromFileName:metadata.fileName serverUrl:metadata.serverUrl activeUrl:appDelegate.activeUrl];
     
     [[NCCommunication sharedInstance] setFavoriteWithUrlString:appDelegate.activeUrl fileName:fileNameServerUrl favorite:favorite account:appDelegate.activeAccount completionHandler:^(NSString *account, NSInteger errorCode, NSString *errorDecription) {
@@ -177,11 +184,17 @@
 
 - (void)listingFavorites
 {
+
+    
     // test
-    if (appDelegate.activeAccount.length == 0)
+    if (appDelegate.activeAccount.length == 0){
+
+        
         return;
+    }
     
     [[NCCommunication sharedInstance]listingFavoritesWithUrlString:appDelegate.activeUrl account:appDelegate.activeAccount completionHandler:^(NSString *account, NSArray *files, NSInteger errorCode, NSString *errorMessage) {
+
         
          if (errorCode == 0 && [account isEqualToString:appDelegate.activeAccount]) {
              
@@ -239,6 +252,8 @@
 
 - (void)tapActionComment:(UITapGestureRecognizer *)tapGesture
 {
+
+    
     CGPoint location = [tapGesture locationInView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:location];
     
@@ -251,6 +266,8 @@
 
 - (void)tapActionShared:(UITapGestureRecognizer *)tapGesture
 {
+
+    
     CGPoint location = [tapGesture locationInView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:location];
     
@@ -267,6 +284,8 @@
 
 - (void)triggerProgressTask:(NSNotification *)notification
 {
+
+    
     if (sectionDataSource.ocIdIndexPath != nil) {
         [[NCMainCommon sharedInstance] triggerProgressTask:notification sectionDataSourceocIdIndexPath:sectionDataSource.ocIdIndexPath tableView:self.tableView viewController:self serverUrlViewController:self.serverUrl];
     }
@@ -274,6 +293,8 @@
 
 - (void)cancelTaskButton:(id)sender withEvent:(UIEvent *)event
 {
+
+    
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint location = [touch locationInView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:location];
@@ -293,6 +314,7 @@
 
 - (void)cancelAllTask:(id)sender
 {
+
     CGPoint location = [sender locationInView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:location];
     
@@ -323,6 +345,7 @@
 
 - (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location
 {
+
     CGPoint convertedLocation = [self.view convertPoint:location toView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:convertedLocation];
     tableMetadata *metadata = [[NCMainCommon sharedInstance] getMetadataFromSectionDataSourceIndexPath:indexPath sectionDataSource:sectionDataSource];
@@ -349,6 +372,8 @@
 
 - (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit
 {
+
+    
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:previewingContext.sourceRect.origin];
     
     [self tableView:self.tableView didSelectRowAtIndexPath:indexPath];
@@ -361,11 +386,15 @@
 
 - (BOOL)canOpenMenuAction:(tableMetadata *)metadata
 {
+
+    
     return YES;
 }
 
 - (BOOL)swipeTableCell:(MGSwipeTableCell *)cell canSwipe:(MGSwipeDirection)direction
 {
+
+    
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     tableMetadata *metadata = [[NCMainCommon sharedInstance] getMetadataFromSectionDataSourceIndexPath:indexPath sectionDataSource:sectionDataSource];
     
@@ -374,6 +403,8 @@
 
 - (BOOL)swipeTableCell:(MGSwipeTableCell *)cell tappedButtonAtIndex:(NSInteger)index direction:(MGSwipeDirection)direction fromExpansion:(BOOL)fromExpansion
 {
+
+    
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     
     if (direction == MGSwipeDirectionRightToLeft) {
@@ -393,6 +424,8 @@
 
 - (void)actionDelete:(NSIndexPath *)indexPath
 {
+
+    
     tableMetadata *metadata = [[NCMainCommon sharedInstance] getMetadataFromSectionDataSourceIndexPath:indexPath sectionDataSource:sectionDataSource];
     tableLocalFile *localFile = [[NCManageDatabase sharedInstance] getTableLocalFileWithPredicate:[NSPredicate predicateWithFormat:@"ocId == %@", metadata.ocId]];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
@@ -428,6 +461,8 @@
 
 - (void)actionMore:(UITapGestureRecognizer *)gestureRecognizer
 {
+
+    
     CGPoint touch = [gestureRecognizer locationInView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:touch];    
     tableMetadata *metadata = [[NCMainCommon sharedInstance] getMetadataFromSectionDataSourceIndexPath:indexPath sectionDataSource:sectionDataSource];
@@ -441,6 +476,8 @@
 
 - (tableMetadata *)setSelfMetadataFromIndexPath:(NSIndexPath *)indexPath
 {
+
+    
     tableMetadata *metadata = [[NCMainCommon sharedInstance] getMetadataFromSectionDataSourceIndexPath:indexPath sectionDataSource:sectionDataSource];
     
     return metadata;
@@ -448,6 +485,8 @@
 
 - (void)reloadDatasource:(NSString *)ocId action:(NSInteger)action
 {
+
+    
     // test
     if (appDelegate.activeAccount.length == 0 || self.view.window == nil) {
         return;
@@ -458,6 +497,8 @@
 
 - (void)queryDatasource
 {
+
+    
     // test
     if (appDelegate.activeAccount.length == 0) {
         return;
@@ -488,28 +529,38 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
     return 60;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+
+    
     return [[sectionDataSource.sectionArrayRow allKeys] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+
+    
     return [[sectionDataSource.sectionArrayRow objectForKey:[sectionDataSource.sections objectAtIndex:section]] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+
     tableShare *shareCell;
     tableMetadata *metadataFolder;
    
     tableMetadata *metadata = [[NCMainCommon sharedInstance] getMetadataFromSectionDataSourceIndexPath:indexPath sectionDataSource:sectionDataSource];
+    ///metadata.sh
     if (metadata == nil || [[NCManageDatabase sharedInstance] isTableInvalidated:metadata]) {
+
         return [CCCellMain new];
     }
+
     
     tableDirectory *directory = [[NCManageDatabase sharedInstance] getTableDirectoryWithPredicate:[NSPredicate predicateWithFormat:@"account == %@ AND serverUrl == %@", appDelegate.activeAccount, metadata.serverUrl]];
     if (directory != nil) {
@@ -517,7 +568,10 @@
     }
     
     for (tableShare *share in appDelegate.shares) {
+
+
         if ([share.serverUrl isEqualToString:metadata.serverUrl] && [share.fileName isEqualToString:metadata.fileName]) {
+
             shareCell = share;
             break;
         }
@@ -528,9 +582,11 @@
     // NORMAL - > MAIN
 
     if ([cell isKindOfClass:[CCCellMain class]]) {
+
         
         // Comment tap
         if (metadata.commentsUnread) {
+
             UITapGestureRecognizer *tapComment = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapActionComment:)];
             [tapComment setNumberOfTapsRequired:1];
             ((CCCellMain *)cell).comment.userInteractionEnabled = YES;
@@ -545,7 +601,7 @@
         
         // More
         if ([self canOpenMenuAction:metadata]) {
-            
+
             UITapGestureRecognizer *tapMore = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionMore:)];
             [tapMore setNumberOfTapsRequired:1];
             ((CCCellMain *)cell).more.userInteractionEnabled = YES;
@@ -557,6 +613,7 @@
         
         // LEFT : configure ONLY Root Favorites : Remove file/folder Favorites
         if (_serverUrl == nil) {
+
             
             ((CCCellMain *)cell).leftButtons = @[[MGSwipeButton buttonWithTitle:@"" icon:[CCGraphics changeThemingColorImage:[UIImage imageNamed:@"favorite"] width:50 height:50 color:[UIColor whiteColor]] backgroundColor:NCBrandColor.sharedInstance.yellowFavorite padding:25]];
             ((CCCellMain *)cell).leftExpansion.buttonIndex = 0;
@@ -582,6 +639,7 @@
     // TRANSFER
     
     if ([cell isKindOfClass:[CCCellMainTransfer class]]) {
+
         
         // gesture Transfer
         [((CCCellMainTransfer *)cell).transferButton.stopButton addTarget:self action:@selector(cancelTaskButton:withEvent:) forControlEvents:UIControlEventTouchUpInside];
@@ -596,6 +654,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
+    
     // deselect row
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
@@ -652,6 +712,8 @@
 
 -(void)performSegueDirectoryWithControlPasscode
 {
+
+    
     CCFavorites *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CCFavorites"];
     
     vc.serverUrl = [CCUtility stringAppendServerUrl:self.metadata.serverUrl addFileName:self.metadata.fileName];
@@ -666,6 +728,8 @@
 
 - (void)shouldPerformSegue:(tableMetadata *)metadata selector:(NSString *)selector
 {
+
+    
     // if i am in background -> exit
     if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) return;
     
@@ -686,6 +750,8 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+
+    
     id viewController = segue.destinationViewController;
     
     if ([viewController isKindOfClass:[UINavigationController class]]) {

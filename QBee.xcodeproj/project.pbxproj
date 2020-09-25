@@ -44,16 +44,8 @@
 		A03AE7532497AB1E00E2E7F7 /* Ethernet5.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03AE7522497AB1E00E2E7F7 /* Ethernet5.swift */; };
 		A03AE7552497AB3400E2E7F7 /* Ethernet6.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03AE7542497AB3400E2E7F7 /* Ethernet6.swift */; };
 		A03C4262248613BD00394B86 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03C4261248613BD00394B86 /* CloudKit.framework */; };
-		A043613324D86C1000A5481B /* RemoteItP2P.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043613224D86C1000A5481B /* RemoteItP2P.swift */; };
 		A043AAAB24DD1DF400B7D125 /* ConnectNextCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = A043AAAA24DD1DF400B7D125 /* ConnectNextCloud.swift */; };
 		A05F4517249CF3700080BFCD /* SwiftUseJavaScriptDemo_2v2.html in Resources */ = {isa = PBXBuildFile; fileRef = A05F4516249CF36F0080BFCD /* SwiftUseJavaScriptDemo_2v2.html */; };
-		A06541A524D40C8500D06774 /* libRemoteit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A06541A424D40C0200D06774 /* libRemoteit.a */; settings = {ATTRIBUTES = (Required, ); }; };
-		A06541BD24D414FB00D06774 /* x86_64-apple-ios-simulator.swiftdoc in Resources */ = {isa = PBXBuildFile; fileRef = A06541B624D414CE00D06774 /* x86_64-apple-ios-simulator.swiftdoc */; };
-		A06541BE24D414FB00D06774 /* x86_64-apple-ios-simulator.swiftmodule in Resources */ = {isa = PBXBuildFile; fileRef = A06541B724D414CE00D06774 /* x86_64-apple-ios-simulator.swiftmodule */; };
-		A06541BF24D414FB00D06774 /* x86_64.swiftdoc in Resources */ = {isa = PBXBuildFile; fileRef = A06541B824D414CE00D06774 /* x86_64.swiftdoc */; };
-		A06541C024D414FB00D06774 /* x86_64.swiftmodule in Resources */ = {isa = PBXBuildFile; fileRef = A06541B924D414CE00D06774 /* x86_64.swiftmodule */; };
-		A06541C124D4151500D06774 /* x86_64.swiftsourceinfo in Resources */ = {isa = PBXBuildFile; fileRef = A06541BB24D414CE00D06774 /* x86_64.swiftsourceinfo */; };
-		A06541C224D4151500D06774 /* x86_64-apple-ios-simulator.swiftsourceinfo in Resources */ = {isa = PBXBuildFile; fileRef = A06541BC24D414CE00D06774 /* x86_64-apple-ios-simulator.swiftsourceinfo */; };
 		A08B035224D8633B00FD1D72 /* RemoteItRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08B035124D8633B00FD1D72 /* RemoteItRest.swift */; };
 		A0A58FC624B55F1100C88DCD /* RemoteltConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A58FC524B55F1100C88DCD /* RemoteltConnect.swift */; };
 		A0A89B14244C4EAC00061155 /* AppCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A89B13244C4EAC00061155 /* AppCenter.framework */; };
@@ -750,17 +742,9 @@
 		A03AE7522497AB1E00E2E7F7 /* Ethernet5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ethernet5.swift; sourceTree = "<group>"; };
 		A03AE7542497AB3400E2E7F7 /* Ethernet6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ethernet6.swift; sourceTree = "<group>"; };
 		A03C4261248613BD00394B86 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		A043613224D86C1000A5481B /* RemoteItP2P.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteItP2P.swift; sourceTree = "<group>"; };
 		A043AAAA24DD1DF400B7D125 /* ConnectNextCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectNextCloud.swift; sourceTree = "<group>"; };
 		A05F4516249CF36F0080BFCD /* SwiftUseJavaScriptDemo_2v2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = SwiftUseJavaScriptDemo_2v2.html; sourceTree = "<group>"; };
 		A06541A424D40C0200D06774 /* libRemoteit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRemoteit.a; path = lib/libRemoteit.a; sourceTree = "<group>"; };
-		A06541B424D414CE00D06774 /* libRemoteit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libRemoteit.a; sourceTree = "<group>"; };
-		A06541B624D414CE00D06774 /* x86_64-apple-ios-simulator.swiftdoc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "x86_64-apple-ios-simulator.swiftdoc"; sourceTree = "<group>"; };
-		A06541B724D414CE00D06774 /* x86_64-apple-ios-simulator.swiftmodule */ = {isa = PBXFileReference; lastKnownFileType = file; path = "x86_64-apple-ios-simulator.swiftmodule"; sourceTree = "<group>"; };
-		A06541B824D414CE00D06774 /* x86_64.swiftdoc */ = {isa = PBXFileReference; lastKnownFileType = file; path = x86_64.swiftdoc; sourceTree = "<group>"; };
-		A06541B924D414CE00D06774 /* x86_64.swiftmodule */ = {isa = PBXFileReference; lastKnownFileType = file; path = x86_64.swiftmodule; sourceTree = "<group>"; };
-		A06541BB24D414CE00D06774 /* x86_64.swiftsourceinfo */ = {isa = PBXFileReference; lastKnownFileType = file; path = x86_64.swiftsourceinfo; sourceTree = "<group>"; };
-		A06541BC24D414CE00D06774 /* x86_64-apple-ios-simulator.swiftsourceinfo */ = {isa = PBXFileReference; lastKnownFileType = file; path = "x86_64-apple-ios-simulator.swiftsourceinfo"; sourceTree = "<group>"; };
 		A08B035124D8633B00FD1D72 /* RemoteItRest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteItRest.swift; sourceTree = "<group>"; };
 		A0A58FC524B55F1100C88DCD /* RemoteltConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteltConnect.swift; sourceTree = "<group>"; };
 		A0A89B13244C4EAC00061155 /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = Carthage/Build/iOS/AppCenter.framework; sourceTree = "<group>"; };
@@ -1551,7 +1535,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A06541A524D40C8500D06774 /* libRemoteit.a in Frameworks */,
 				F716FE7823795E5000FABE50 /* NCCommunication.framework in Frameworks */,
 				F74C4FBB2328C3C200A23E25 /* OpenSSL.framework in Frameworks */,
 				A0A89B18244C4EC500061155 /* AppCenterAnalytics.framework in Frameworks */,
@@ -1641,7 +1624,6 @@
 				A08B035124D8633B00FD1D72 /* RemoteItRest.swift */,
 				A01F0CE724B2E7F200CCD047 /* RemoteItQBeeAPI.swift */,
 				A0A58FC524B55F1100C88DCD /* RemoteltConnect.swift */,
-				A043613224D86C1000A5481B /* RemoteItP2P.swift */,
 			);
 			path = RemoteItQBee;
 			sourceTree = "<group>";
@@ -1664,36 +1646,6 @@
 				A043AAAA24DD1DF400B7D125 /* ConnectNextCloud.swift */,
 			);
 			path = NextCloud;
-			sourceTree = "<group>";
-		};
-		A06541B324D414CE00D06774 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				A06541B424D414CE00D06774 /* libRemoteit.a */,
-				A06541B524D414CE00D06774 /* Remoteit.swiftmodule */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		A06541B524D414CE00D06774 /* Remoteit.swiftmodule */ = {
-			isa = PBXGroup;
-			children = (
-				A06541B624D414CE00D06774 /* x86_64-apple-ios-simulator.swiftdoc */,
-				A06541B724D414CE00D06774 /* x86_64-apple-ios-simulator.swiftmodule */,
-				A06541B824D414CE00D06774 /* x86_64.swiftdoc */,
-				A06541B924D414CE00D06774 /* x86_64.swiftmodule */,
-				A06541BA24D414CE00D06774 /* Project */,
-			);
-			path = Remoteit.swiftmodule;
-			sourceTree = "<group>";
-		};
-		A06541BA24D414CE00D06774 /* Project */ = {
-			isa = PBXGroup;
-			children = (
-				A06541BB24D414CE00D06774 /* x86_64.swiftsourceinfo */,
-				A06541BC24D414CE00D06774 /* x86_64-apple-ios-simulator.swiftsourceinfo */,
-			);
-			path = Project;
 			sourceTree = "<group>";
 		};
 		A0BD1B9E249737D5001BDB4A /* QBee */ = {
@@ -2974,7 +2926,6 @@
 		F7F67B9F1A24D27800EE80DA = {
 			isa = PBXGroup;
 			children = (
-				A06541B324D414CE00D06774 /* lib */,
 				F7F67BAA1A24D27800EE80DA /* iOSClient */,
 				F7F67BAB1A24D27800EE80DA /* Supporting Files */,
 				F771E3D120E2392D00AFB62D /* File Provider Extension */,
@@ -3365,12 +3316,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A06541C124D4151500D06774 /* x86_64.swiftsourceinfo in Resources */,
-				A06541C224D4151500D06774 /* x86_64-apple-ios-simulator.swiftsourceinfo in Resources */,
-				A06541BD24D414FB00D06774 /* x86_64-apple-ios-simulator.swiftdoc in Resources */,
-				A06541BE24D414FB00D06774 /* x86_64-apple-ios-simulator.swiftmodule in Resources */,
-				A06541BF24D414FB00D06774 /* x86_64.swiftdoc in Resources */,
-				A06541C024D414FB00D06774 /* x86_64.swiftmodule in Resources */,
 				F79728D422F96F2E003CACA7 /* NCShareLinkFolderMenuView.xib in Resources */,
 				F760F78421F21F61006B1A73 /* ColorCollectionViewCell.xib in Resources */,
 				F7362A1F220C853A005101B5 /* LaunchScreen.storyboard in Resources */,
@@ -3941,7 +3886,6 @@
 				F7381EE1218218C9000B1560 /* NCOffline.swift in Sources */,
 				F7D423861F0596C6009C9782 /* ReaderThumbRequest.m in Sources */,
 				F73B4EF51F470D9100BBEE4B /* JpCntx.cpp in Sources */,
-				A043613324D86C1000A5481B /* RemoteItP2P.swift in Sources */,
 				F78071091EDAB65800EAFFF6 /* NSNotificationCenter+MainThread.m in Sources */,
 				F76B3CCE1EAE01BD00921AC9 /* NCBrand.swift in Sources */,
 				F7BF1B431D51E893000854F6 /* CCLogin.m in Sources */,
@@ -4159,7 +4103,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 16;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 352B3NNBK2;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4178,7 +4122,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				LIBRARY_SEARCH_PATHS = "\"Libraries external\"/**";
-				MARKETING_VERSION = 2.25.9;
+				MARKETING_VERSION = 2.25.11;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -4210,7 +4154,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 16;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 352B3NNBK2;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4229,7 +4173,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				LIBRARY_SEARCH_PATHS = "\"Libraries external\"/**";
-				MARKETING_VERSION = 2.25.9;
+				MARKETING_VERSION = 2.25.11;
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.evermore.qbee.m.NotificationServiceExtension;
@@ -4254,7 +4198,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 16;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 352B3NNBK2;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4273,7 +4217,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				LIBRARY_SEARCH_PATHS = "\"Libraries external\"/**";
-				MARKETING_VERSION = 2.25.10;
+				MARKETING_VERSION = 2.25.11;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.evermore.qbee.m.Share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4300,7 +4244,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 16;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 352B3NNBK2;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4319,7 +4263,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				LIBRARY_SEARCH_PATHS = "\"Libraries external\"/**";
-				MARKETING_VERSION = 2.25.10;
+				MARKETING_VERSION = 2.25.11;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.evermore.qbee.m.Share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4351,7 +4295,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 16;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 352B3NNBK2;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4370,7 +4314,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				LIBRARY_SEARCH_PATHS = "\"Libraries external\"/**";
-				MARKETING_VERSION = 2.25.9;
+				MARKETING_VERSION = 2.25.11;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.evermore.qbee.m.FileProviderExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4401,7 +4345,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 16;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 352B3NNBK2;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4420,7 +4364,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				LIBRARY_SEARCH_PATHS = "\"Libraries external\"/**";
-				MARKETING_VERSION = 2.25.9;
+				MARKETING_VERSION = 2.25.11;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.evermore.qbee.m.FileProviderExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4443,7 +4387,7 @@
 				CODE_SIGN_ENTITLEMENTS = iOSClient/Brand/iOSClient.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = 352B3NNBK2;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4460,8 +4404,8 @@
 				INFOPLIST_FILE = "$(SRCROOT)/iOSClient/Brand/iOSClient.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/lib";
-				MARKETING_VERSION = 2.25.9;
+				LIBRARY_SEARCH_PATHS = "";
+				MARKETING_VERSION = 2.25.11;
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.evermore.qbee.m;
@@ -4491,7 +4435,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = 352B3NNBK2;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4507,8 +4451,8 @@
 				INFOPLIST_FILE = "$(SRCROOT)/iOSClient/Brand/iOSClient.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/lib";
-				MARKETING_VERSION = 2.25.9;
+				LIBRARY_SEARCH_PATHS = "";
+				MARKETING_VERSION = 2.25.11;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.evermore.qbee.m;
 				PRODUCT_NAME = QBee;

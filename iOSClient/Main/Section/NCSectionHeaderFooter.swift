@@ -55,10 +55,10 @@ class NCSectionHeaderMenu: UICollectionReusableView {
         
         // Order (∨∧▽△)
         var title = ""
-        
         switch datasourceSorted {
         case "fileName":
-            if datasourceAscending == true { title = NSLocalizedString("_order_by_name_a_z_", comment: "") }
+            if datasourceAscending == true { title = NSLocalizedString("_order_by_name_a_z_", comment: "")
+            }
             if datasourceAscending == false { title = NSLocalizedString("_order_by_name_z_a_", comment: "") }
         case "date":
             if datasourceAscending == false { title = NSLocalizedString("_order_by_date_more_recent_", comment: "") }

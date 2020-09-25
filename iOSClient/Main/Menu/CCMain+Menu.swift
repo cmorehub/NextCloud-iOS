@@ -29,13 +29,13 @@ extension CCMain {
 
     private func initSortMenu() -> [NCMenuAction] {
         var actions = [NCMenuAction]()
-
-        actions.append(
+        //tien 20200908 A to Z Z to A start
+         actions.append(
             NCMenuAction(
-                title: NSLocalizedString("_order_by_name_a_z_", comment: ""),
-                icon: CCGraphics.changeThemingColorImage(UIImage(named: "sortFileNameAZ"), width: 50, height: 50, color: NCBrandColor.sharedInstance.icon),
-                onTitle: NSLocalizedString("_order_by_name_z_a_", comment: ""),
-                onIcon: CCGraphics.changeThemingColorImage(UIImage(named: "sortFileNameZA"), width: 50, height: 50, color: NCBrandColor.sharedInstance.icon),
+                title: NSLocalizedString("_order_by_name_z_a_", comment: ""),
+                icon: CCGraphics.changeThemingColorImage(UIImage(named: "sortFileNameZA"), width: 50, height: 50, color: NCBrandColor.sharedInstance.icon),
+                onTitle: NSLocalizedString("_order_by_name_a_z_", comment: ""),
+                onIcon: CCGraphics.changeThemingColorImage(UIImage(named: "sortFileNameAZ"), width: 50, height: 50, color: NCBrandColor.sharedInstance.icon),
                 selected: CCUtility.getOrderSettings() == "fileName",
                 on: CCUtility.getAscendingSettings(),
                 action: { menuAction in
@@ -49,7 +49,7 @@ extension CCMain {
                 }
             )
         )
-
+        //tien 20200908 A to Z Z to A end
         actions.append(
             NCMenuAction(
                 title: NSLocalizedString("_order_by_date_more_recent_", comment: ""),
